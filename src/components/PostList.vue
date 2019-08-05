@@ -9,7 +9,11 @@
         params: { title: post}
       }"
     >
-      <img class="post-list-item-image" src="@/assets/posts/{{post}}/cover.svg" type="image/svg" />
+      <img
+        class="post-list-item-image"
+        v-bind:src="'@/assets/posts/' + post + '/cover.svg'"
+        type="image/svg"
+      />
     </router-link>
   </div>
 </template>
