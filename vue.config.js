@@ -3,6 +3,14 @@ const renderer = new marked.Renderer();
 
 module.exports = {
   chainWebpack: config => {
+    config.resolve.alias
+      // '@' is an alias for 'src'
+      .set('@components', '@/components')
+      .set('@views', '@/views')
+      .set('@assets', '@/assets')
+      .set('@posts', '@/assets/posts')
+      .set('@scss', '@/assets/scss');
+
     config.module
       .rule('md')
       .test(/.md$/)
