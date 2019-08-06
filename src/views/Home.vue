@@ -21,5 +21,17 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.home {
+  width: 100vw;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  background-color: #000;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 </style>
