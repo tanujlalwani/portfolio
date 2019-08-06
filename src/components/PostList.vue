@@ -9,11 +9,7 @@
         params: { title: post}
       }"
     >
-      <img
-        class="post-list-item-image"
-        v-bind:src="'@/assets/posts/' + post + '/cover.svg'"
-        type="image/svg"
-      />
+      <img class="post-list-item-image" :src="getCover(post)" type="image/svg" />
     </router-link>
   </div>
 </template>
@@ -24,6 +20,11 @@ export default {
     return {
       posts: ["the-aditi-wall", "reach-out-of-the-box", "binary", "artwork"]
     };
+  },
+  methods: {
+    getCover(title) {
+      return require("../assets/posts/" + title + "/cover.svg");
+    }
   }
 };
 </script>
