@@ -25,6 +25,19 @@ module.exports = {
     // .end();
 
     config.module
+      .rule('scss')
+      .test(/\.scss$/)
+      .use('vue-style-loader')
+      .loader('vue-style-loader')
+      .end()
+      .use('css-loader')
+      .loader('vue-style-loader')
+      .end()
+      .use('sass-loader')
+      .loader('vue-style-loader')
+      .end();
+
+    config.module
       .rule('md')
       .test(/.md$/)
       .use('html-loader')
