@@ -143,4 +143,15 @@ body {
 * {
   -webkit-overflow-scrolling: touch;
 }
+
+/* Font Imports */
+
+@import url("https://rsms.me/inter/inter-ui.css");
+
+/* Font Settings */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 </style>
