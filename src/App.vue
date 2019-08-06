@@ -154,4 +154,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* App Layout */
+
+.app {
+  width: 100vw;
+  height: 100vh;
+}
 </style>
