@@ -12,6 +12,19 @@ module.exports = {
       .set('@scss', '@/assets/scss');
 
     config.module
+      .rule('image')
+      .test(/.(png | jpe?g | gif | svg)$/)
+      .use('file-loader')
+      .loader('file-loader')
+      .options({
+        name: '[hash].[name].[ext]'
+      })
+      .end();
+    // .use('image-loader')
+    // .loader('image-webpack-loader')
+    // .end();
+
+    config.module
       .rule('md')
       .test(/.md$/)
       .use('html-loader')
