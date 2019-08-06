@@ -31,6 +31,6 @@ export default {
 
   display: block;
 
-  background-color: #000;
+  background-color: hsl(200, 0, 10);
 }
 </style>

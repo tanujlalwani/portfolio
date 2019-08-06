@@ -21,8 +21,6 @@ export default {};
 
     .hero-text {
       width: 60%;
-      // height: 100%;
-      // flex-basis: 100%;
 
       font: 4rem "Inter UI", system-ui, sans-serif;
       font-weight: 650;

@@ -28,3 +28,43 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+
+.post-list {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  // scroll-snap-type: y mandatory;
+}
+
+.post-list-item {
+  height: 50vh;
+  margin: 3% 3% 0 3%;
+
+  &:last-child {
+    margin-bottom: 3%;
+  }
+
+  background-color: hsl(0, 0, 0);
+
+  opacity: 0.5;
+  transition: 0.7s opacity;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .post-list-item-image {
+    height: 100%;
+    width: 100%;
+
+    object-fit: contain;
+  }
+}
+
+</style>
