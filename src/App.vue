@@ -136,10 +136,6 @@ table {
   border-spacing: 0;
 }
 
-body {
-  z-index: -20;
-}
-
 * {
   -webkit-overflow-scrolling: touch;
 }

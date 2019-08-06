@@ -23,15 +23,14 @@ export default {
 
 <style lang="scss">
 .home {
-  width: 100vw;
-
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-
-  background-color: #000;
+  width: 100%;
+  height: 100%;
 
   overflow-y: scroll;
   overflow-x: hidden;
+
+  display: block;
+
+  background-color: #000;
 }
 </style>
