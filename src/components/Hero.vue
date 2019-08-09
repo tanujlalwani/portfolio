@@ -22,11 +22,10 @@ export default {};
   .hero-text {
     width: 60%;
 
-    font: 3.5rem "Space Mono", system-ui, sans-serif;
+    font: 3.5rem "Space Mono", monospace;
     font-weight: 800;
     text-align: center;
     color: rgb(252, 76, 2);
-    // -webkit-text-stroke: 1px white;
 
     // letter-spacing: -0.02rem;
     // word-spacing: -0.2rem;

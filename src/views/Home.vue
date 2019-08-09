@@ -19,8 +19,9 @@ import PostList from "@components/PostList.vue";
 
 export default {
   components: {
-    "post-list": PostList,
-    hero: Hero
+    PostList,
+    Hero,
+    About
   },
   data() {
     return {
@@ -45,7 +46,7 @@ export default {
 
   display: block;
 
-  background-color: hsl(200, 0, 10);
+  background-color: #000;
 }
 
 .marquee-text-wrap {
