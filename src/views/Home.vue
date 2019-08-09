@@ -8,8 +8,13 @@
       @mouseover="workMarqueeHover()"
     >Who are you?&nbsp;•&nbsp;</marquee-text>
     <about></about>
-    <marquee-text :duration="40" :paused="workMarqueePause" @mouseover="workMarqueeHover()">
-      WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK •&nbsp;
+    <marquee-text
+      :repeat="20"
+      :duration="6"
+      :paused="workMarqueePause"
+      @mouseover="workMarqueeHover()"
+    >
+      WORK&nbsp;•&nbsp;WORK&nbsp;•&nbsp;
       <!-- <span
         class="orange"
       >NA • NA • NA • NA • DURP • DURP • DURP • DURP • TWERK • TWERK • TWERK • TWERK •&nbsp;</span>-->
