@@ -30,7 +30,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .post-list {
   width: 100%;
 
@@ -66,5 +65,4 @@ export default {
     object-fit: contain;
   }
 }
-
 </style>
