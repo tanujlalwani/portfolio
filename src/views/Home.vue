@@ -2,11 +2,11 @@
   <div class="home">
     <hero></hero>
     <marquee-text
-      :repeat="5"
+      :repeat="8"
       :duration="10"
       :paused="workMarqueePause"
       @mouseover="workMarqueeHover()"
-    >Who are you? •&nbsp;</marquee-text>
+    >Who are you?&nbsp;•&nbsp;</marquee-text>
     <about></about>
     <marquee-text :duration="40" :paused="workMarqueePause" @mouseover="workMarqueeHover()">
       WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK •&nbsp;
