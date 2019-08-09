@@ -25,7 +25,7 @@ export default {};
     font: 3.5rem "Space Mono", system-ui, sans-serif;
     font-weight: 800;
     text-align: center;
-    color: rgb(255, 102, 0);
+    color: rgb(252, 76, 2);
     // -webkit-text-stroke: 1px white;
 
     // letter-spacing: -0.02rem;

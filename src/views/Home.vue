@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <hero></hero>
+    <about></about>
     <marquee-text :duration="40" :paused="workMarqueePause" @mouseover="workMarqueeHover()">
       WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK •
       <span
@@ -13,6 +14,7 @@
 
 <script>
 import Hero from "@components/Hero.vue";
+import About from "@components/About.vue";
 import PostList from "@components/PostList.vue";
 
 export default {
