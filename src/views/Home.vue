@@ -1,12 +1,18 @@
 <template>
   <div class="home">
     <hero></hero>
+    <marquee-text
+      :repeat="5"
+      :duration="10"
+      :paused="workMarqueePause"
+      @mouseover="workMarqueeHover()"
+    >Who are you? •&nbsp;</marquee-text>
     <about></about>
     <marquee-text :duration="40" :paused="workMarqueePause" @mouseover="workMarqueeHover()">
-      WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK •
-      <span
+      WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK • WORK •&nbsp;
+      <!-- <span
         class="orange"
-      >NA • NA • NA • NA • DURP • DURP • DURP • DURP • TWERK • TWERK • TWERK • TWERK •&nbsp;</span>
+      >NA • NA • NA • NA • DURP • DURP • DURP • DURP • TWERK • TWERK • TWERK • TWERK •&nbsp;</span>-->
     </marquee-text>
     <post-list></post-list>
   </div>
@@ -52,10 +58,11 @@ export default {
 .marquee-text-wrap {
   display: block;
   padding: 0.5em 0 0.5em 0;
+  // transform: rotate(3deg);
 
   background-color: #000;
 
-  border: 1px solid #fff;
+  // border: 1px solid #fff;
   border-left: 0;
   border-right: 0;
 
@@ -67,9 +74,9 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
 
 .marquee-text-text {
-  font: normal 400 40px "Soulcraft";
-  color: #fff;
-  font-variation-settings: "wdth" 90, "wght" 100;
+  font: normal 800 40px "Space Mono";
+  color: rgb(255, 240, 37);
+  text-decoration-line: blink;
   // -webkit-text-stroke: 1px white;
 }
 

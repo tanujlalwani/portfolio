@@ -1,8 +1,10 @@
 <template>
   <div class="about">
-    <p
-      class="about-text"
-    >The fields of design and technology are being increasingly integrated. I intend to use my unique skillset to continue pushing the boundaries of the way we build and interact with the connected world around us in new and meaningful ways. I am passionate about learn new things and always looking to expand my skillset so I can create more immersive yet effective experiences.</p>
+    <p class="about-text">
+      I apologize for Tangerine. It's still a work in progress. However when I'm not dealing with it tantrums, I work as a creative technologist - at the interesction of technology and design. Over the last few years, these fields have been increasingly integrated. I intend to use my unique skillset to continue pushing the boundaries of the way we build and interact with the connected world around us in new and meaningful ways.
+      <br />
+      <br />- Tanuj
+    </p>
   </div>
 </template>
 
@@ -13,7 +15,7 @@ export default {};
 <style lang="scss">
 .about {
   width: 100%;
-  border-top: 1px solid #fff;
+  // border-top: 1px solid #fff;
 }
 
 .about-text {
@@ -21,7 +23,7 @@ export default {};
 
   display: block;
   margin: 5em auto 5em auto;
-  rotate: 15;
+  // transform: rotate(-3deg);
 
   font: 1.8em "Space Mono", monospace;
   font-weight: 300;
@@ -31,5 +33,7 @@ export default {};
   letter-spacing: 0;
   word-spacing: -0.2rem;
   font-variant-ligatures: none;
+
+  text-align: left;
 }
 </style>

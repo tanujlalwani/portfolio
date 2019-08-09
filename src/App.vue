@@ -137,6 +137,7 @@ table {
 }
 
 * {
+  box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -156,5 +157,7 @@ table {
 .app {
   width: 100vw;
   height: 100vh;
+
+  border: 3px solid rgb(252, 76, 2);
 }
 </style>
