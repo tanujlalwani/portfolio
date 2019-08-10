@@ -63,8 +63,14 @@ export default {
 
 <style lang="scss">
 .about {
+  scroll-snap-align: start;
+
   width: 100%;
-  height: 105%;
+  height: 100%;
+
+  // display: flex;
+  // flex-flow: column nowrap;
+
   // border-top: 1px solid #fff;
 }
 
@@ -72,8 +78,7 @@ export default {
   width: 60%;
 
   display: block;
-  margin: 5em auto 5em auto;
-  // transform: rotate(-3deg);
+  margin: 4em auto 4em auto;
 
   font: 1.8em "Space Mono", monospace;
   font-weight: 300;

@@ -1,24 +1,21 @@
 <template>
-  <router-link
-    class="post-list-item"
-    :to="{
-        name: 'title',
-        params: { title: title}
-      }"
-  >
-    <img class="post-list-item-image" :src="getCover(title)" type="image/svg" />
+  <router-link class="post-list-item" :to="{
+        name: 'post.path',
+      }">
+    <img class="post-list-item-image" :src="getCover(post.path)" type="image/png" />
+    <h1 class="post-list-item-title">{{ post.title }}</h1>
   </router-link>
 </template>
 
 <script>
 export default {
-  props: ["title"],
+  props: ["post"],
   data() {
     return {};
   },
   methods: {
-    getCover(title) {
-      return require("../assets/posts/" + title + "/cover.svg");
+    getCover(path) {
+      return require("../assets/posts/" + path + "/cover.png");
     }
   }
 };
@@ -26,8 +23,11 @@ export default {
 
 <style lang="scss">
 .post-list-item {
-  height: 50vh;
-  margin: 3% 3% 0 3%;
+  scroll-snap-align: start;
+
+  height: 100vh;
+  // margin: 5% 3% 5% 3%;
+  // border: 1px solid #fff;
 
   &:last-child {
     margin-bottom: 3%;
@@ -35,18 +35,30 @@ export default {
 
   background-color: hsl(0, 0, 0);
 
-  opacity: 0.5;
-  transition: 0.7s opacity;
+  // opacity: 0.5;
+  // transition: 0.7s opacity;
 
-  &:hover {
-    opacity: 1;
-  }
+  // &:hover {
+  //   opacity: 1;
+  // }
 
   .post-list-item-image {
     height: 100%;
     width: 100%;
 
-    object-fit: contain;
+    object-fit: cover;
+  }
+
+  .post-list-item-title {
+    font: 1.8em "Space Mono", monospace;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+    line-height: 1.3;
+    letter-spacing: 0;
+    word-spacing: -0.2rem;
+    font-variant-ligatures: none;
   }
 }
 </style>

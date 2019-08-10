@@ -14,7 +14,7 @@
       >NA • NA • NA • NA • DURP • DURP • DURP • DURP • TWERK • TWERK • TWERK • TWERK •&nbsp;</span>-->
     </marquee-text>
     <div class="post-list">
-      <post-list-item v-for="(post, index) in posts" v-bind:key="index" v-bind:title="post"></post-list-item>
+      <post-list-item v-for="(post, index) in posts" v-bind:key="index" v-bind:post="post"></post-list-item>
     </div>
   </div>
 </template>
@@ -32,7 +32,32 @@ export default {
   },
   data() {
     return {
-      posts: ["the-aditi-wall", "reach-out-of-the-box", "binary", "artwork"],
+      posts: [
+        {
+          title: "The Aditi Wall",
+          path: "the-aditi-wall",
+          tags: ["web", "identity"],
+          theme: "black"
+        },
+        {
+          title: "Reach Out of the Box",
+          path: "reach-out-of-the-box",
+          tags: ["identity", "print"],
+          theme: "black"
+        },
+        {
+          title: "Binary",
+          path: "binary",
+          tags: ["motion"],
+          theme: "black"
+        },
+        {
+          title: "Artwork",
+          path: "artwork",
+          tags: ["fine art"],
+          theme: "white"
+        }
+      ],
       workMarqueePause: false
     };
   },
@@ -52,12 +77,17 @@ export default {
   overflow-y: scroll;
   overflow-x: hidden;
 
-  display: block;
+  // display: flex;
+  // flex-flow: column nowrap;
 
   background-color: #000;
+
+  scroll-snap-type: y mandatory;
 }
 
 .post-list {
+  // scroll-snap-align: start;
+
   width: 100%;
 
   display: flex;
@@ -67,6 +97,8 @@ export default {
 }
 
 .marquee-text-wrap {
+  // scroll-snap-align: start;
+  // scroll-snap-stop: always;
   display: block;
   padding: 0.5em 0 0.5em 0;
   // transform: rotate(3deg);

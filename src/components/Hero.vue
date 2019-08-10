@@ -10,6 +10,8 @@ export default {};
 
 <style lang="scss">
 .hero {
+  scroll-snap-align: start;
+
   width: 100%;
   height: 100%;
 
