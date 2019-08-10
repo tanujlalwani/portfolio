@@ -14,7 +14,7 @@
       >NA • NA • NA • NA • DURP • DURP • DURP • DURP • TWERK • TWERK • TWERK • TWERK •&nbsp;</span>-->
     </marquee-text>
     <div class="post-list">
-      <post-list-item v-for="(post, index) in posts" v-bind:key="index" v-bind:post="post"></post-list-item>
+      <post-list-item v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></post-list-item>
     </div>
   </div>
 </template>
@@ -34,27 +34,43 @@ export default {
     return {
       posts: [
         {
+          id: "0",
           title: "The Aditi Wall",
           path: "the-aditi-wall",
           tags: ["web", "identity"],
+          coverVideo: false,
           theme: "black"
         },
         {
+          id: "1",
           title: "Reach Out of the Box",
           path: "reach-out-of-the-box",
           tags: ["identity", "print"],
+          coverVideo: true,
           theme: "black"
         },
         {
+          id: "2",
+          title: "Continuum",
+          path: "continuum",
+          tags: ["motion"],
+          coverVideo: true,
+          theme: "black"
+        },
+        {
+          id: "3",
           title: "Binary",
           path: "binary",
           tags: ["motion"],
+          coverVideo: true,
           theme: "black"
         },
         {
+          id: "4",
           title: "Artwork",
           path: "artwork",
           tags: ["fine art"],
+          coverVideo: true,
           theme: "white"
         }
       ],
