@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <div class="hero scroll-snap-start">
     <div class="hero-text">Hello! I'm just testing this hero text out.</div>
   </div>
 </template>
@@ -10,27 +10,22 @@ export default {};
 
 <style lang="scss">
 .hero {
-  scroll-snap-align: start;
-
   width: 100%;
   height: 100%;
 
   display: flex;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-
-  background-color: #000;
 
   .hero-text {
     width: 60%;
 
-    font: 3.5rem "Space Mono", monospace;
-    font-weight: 800;
+    font-size: 3.5em;
+    font-weight: var(--font-weight-bold);
     text-align: center;
-    color: rgb(252, 76, 2);
+    color: var(--accent-color);
 
-    // letter-spacing: -0.02rem;
-    // word-spacing: -0.2rem;
     line-height: 1.2em;
 
     cursor: default;

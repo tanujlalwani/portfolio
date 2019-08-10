@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <marquee-text :repeat="8" :duration="10">Who are you?&nbsp;•&nbsp;</marquee-text>
+  <div class="about scroll-snap-start">
+    <marquee-text class="marquee-about" :repeat="8" :duration="10">Who are you?&nbsp;•&nbsp;</marquee-text>
     <p
       class="about-text"
       v-bind:class="{ 'about-text-creative': creativeOn, 'about-text-technologist': technologistOn}"
@@ -63,22 +63,19 @@ export default {
 
 <style lang="scss">
 .about {
-  scroll-snap-align: start;
-
   width: 100%;
   height: 100%;
 
-  // display: flex;
-  // flex-flow: column nowrap;
-
-  // border-top: 1px solid #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-text {
+  flex-basis: 0.8;
+  flex-grow: 1;
   width: 60%;
-
-  display: block;
-  margin: 4em auto 4em auto;
 
   font: 1.8em "Space Mono", monospace;
   font-weight: 300;
