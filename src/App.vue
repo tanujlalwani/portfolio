@@ -158,6 +158,6 @@ table {
   width: 100vw;
   height: 100vh;
 
-  border: 3px solid rgb(252, 76, 2);
+  border: 3px solid rgb(63, 63, 63);
 }
 </style>
