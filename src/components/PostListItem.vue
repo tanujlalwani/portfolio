@@ -2,9 +2,12 @@
   <router-link class="post-list-item" :to="{
         name: 'post.path',
       }">
-    <picture><source type=”video/mp4” srcset=”cats.mp4”></picture>
     <video
       v-if="post.coverVideo"
+      :poster="getCoverImage(post.path)"
+      preload="none"
+      playsinline
+      muted
       class="post-list-item-video"
       :id="'post-list-item-video-' + post.id"
       loop
@@ -12,6 +15,7 @@
       @mouseleave="pauseVideo(post.id)"
     >
       <source :src="getCoverVideo(post.path)" type="video/webm" />
+      <source :src="getCoverVideoAlt(post.path)" type="video/mp4" />
     </video>
     <img v-else class="post-list-item-image" :src="getCoverImage(post.path)" type="image/png" />
     <h1 class="post-list-item-title">{{ post.title }}</h1>
@@ -30,6 +34,9 @@ export default {
     },
     getCoverVideo(path) {
       return require("../assets/posts/" + path + "/cover.webm");
+    },
+    getCoverVideoAlt(path) {
+      return require("../assets/posts/" + path + "/cover.mp4");
     },
     playVideo(id) {
       document.getElementById("post-list-item-video-" + id).play();
