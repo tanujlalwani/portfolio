@@ -13,23 +13,26 @@
         class="orange"
       >NA • NA • NA • NA • DURP • DURP • DURP • DURP • TWERK • TWERK • TWERK • TWERK •&nbsp;</span>-->
     </marquee-text>
-    <post-list></post-list>
+    <div class="post-list">
+      <post-list-item v-for="(post, index) in posts" v-bind:key="index" v-bind:title="post"></post-list-item>
+    </div>
   </div>
 </template>
 
 <script>
 import Hero from "@components/Hero.vue";
 import About from "@components/About.vue";
-import PostList from "@components/PostList.vue";
+import PostListItem from "@components/PostListItem.vue";
 
 export default {
   components: {
-    PostList,
     Hero,
-    About
+    About,
+    PostListItem
   },
   data() {
     return {
+      posts: ["the-aditi-wall", "reach-out-of-the-box", "binary", "artwork"],
       workMarqueePause: false
     };
   },
@@ -52,6 +55,15 @@ export default {
   display: block;
 
   background-color: #000;
+}
+
+.post-list {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .marquee-text-wrap {

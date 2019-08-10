@@ -1,11 +1,6 @@
 <template>
   <div class="about">
-    <marquee-text
-      :repeat="8"
-      :duration="10"
-      :paused="workMarqueePause"
-      @mouseover="workMarqueeHover"
-    >Who are you?&nbsp;•&nbsp;</marquee-text>
+    <marquee-text :repeat="8" :duration="10">Who are you?&nbsp;•&nbsp;</marquee-text>
     <p
       class="about-text"
       v-bind:class="{ 'about-text-creative': creativeOn, 'about-text-technologist': technologistOn}"
