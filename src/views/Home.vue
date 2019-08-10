@@ -1,18 +1,12 @@
 <template>
   <div class="home">
     <hero></hero>
-    <marquee-text
-      :repeat="8"
-      :duration="10"
-      :paused="workMarqueePause"
-      @mouseover="workMarqueeHover()"
-    >Who are you?&nbsp;•&nbsp;</marquee-text>
     <about></about>
     <marquee-text
       :repeat="20"
       :duration="6"
       :paused="workMarqueePause"
-      @mouseover="workMarqueeHover()"
+      @mouseover="workMarqueeHover"
     >
       WORK&nbsp;•&nbsp;WORK&nbsp;•&nbsp;
       <!-- <span
@@ -67,7 +61,7 @@ export default {
 
   background-color: #000;
 
-  // border: 1px solid #fff;
+  border: 1px solid #fff;
   border-left: 0;
   border-right: 0;
 
@@ -80,8 +74,8 @@ export default {
 
 .marquee-text-text {
   font: normal 800 40px "Space Mono";
-  color: rgb(255, 240, 37);
-  text-decoration-line: blink;
+  color: rgb(255, 255, 255);
+  // text-decoration-line: overline;
   // -webkit-text-stroke: 1px white;
 }
 
