@@ -1,7 +1,11 @@
 <template>
-  <router-link class="post-list-item scroll-snap-start" :to="{
-        name: 'post.path',
-      }">
+  <router-link
+    class="post-list-item scroll-snap-start"
+    :to="{
+        name: 'post',
+        params: { title: post.path },
+      }"
+  >
     <video
       v-if="post.coverVideo"
       :poster="getCoverImage(post.path)"
