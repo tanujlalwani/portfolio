@@ -26,7 +26,7 @@ These characteristics carried over to the final logo: the words Reach Out of the
 
 <div class="image image-light image-vertical">
 
-![Reach Out of the Box: Poster 1](5.png 'ReachOut: Logo Process')
+![Reach Out of the Box: Final Logo](1.png 'ReachOut: Final Logo')
 ![Reach Out of the Box: Logo Process](2.png 'Reach Out of the Box: Logo Process')
 
 </div>
