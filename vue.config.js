@@ -33,7 +33,6 @@ module.exports = {
       .use('markdown-loader')
       .loader('markdown-loader')
       .options({
-        headerIds: false,
         xhtml: true,
         breaks: true,
         renderer,
