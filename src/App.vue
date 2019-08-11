@@ -45,14 +45,6 @@
 
 /* CSS Global Styles */
 
-html,
-body {
-  width: 100vw;
-  height: 100vh;
-
-  overflow: hidden;
-}
-
 body {
   background-color: var(--background-color-default);
   font: var(--font-style-default) var(--font-weight-normal) 1em
@@ -63,11 +55,12 @@ body {
   letter-spacing: var(--font-letter-spacing-default);
   font-variant-ligatures: var(--font-variant-ligatures);
   word-spacing: var(--font-word-spacing-default);
+
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
-  overflow-x: inherit;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -99,7 +92,5 @@ body {
   height: 100vh;
 
   border: 3px solid rgb(63, 63, 63);
-
-  overflow: hidden;
 }
 </style>

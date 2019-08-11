@@ -48,9 +48,6 @@ export default {
   scroll-snap-type: y mandatory;
 }
 
-.post-list {
-}
-
 .marquee-text-wrap {
   padding: 0.5em 0 0.5em 0;
 
