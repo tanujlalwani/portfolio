@@ -8,7 +8,7 @@
       preload="none"
       playsinline
       muted
-      class="post-list-item-video"
+      class="post-list-item-video size-fill-viewport"
       :id="'post-list-item-video-' + post.id"
       loop
       @mouseenter="playVideo(post.id)"
@@ -17,7 +17,12 @@
       <source :src="getCoverVideo(post.path)" type="video/webm" />
       <source :src="getCoverVideoAlt(post.path)" type="video/mp4" />
     </video>
-    <img v-else class="post-list-item-image" :src="getCoverImage(post.path)" type="image/png" />
+    <img
+      v-else
+      class="post-list-item-image size-fill-viewport"
+      :src="getCoverImage(post.path)"
+      type="image/png"
+    />
     <!-- <h1 class="post-list-item-title">{{ post.title }}</h1> -->
   </router-link>
 </template>
@@ -51,28 +56,18 @@ export default {
 
 <style lang="scss">
 .post-list-item {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+
+  scroll-snap-align: start;
   overflow: hidden;
 
   .post-list-item-image,
   .post-list-item-video {
-    width: 100%;
-    height: 100%;
-
     object-fit: cover;
   }
 
   // .post-list-item-title {
-  //   font: 1.8em "Space Mono", monospace;
-  //   font-weight: 300;
-  //   color: rgb(255, 255, 255);
-  //   text-decoration: none;
-
-  //   line-height: 1.3;
-  //   letter-spacing: 0;
-  //   word-spacing: -0.2rem;
-  //   font-variant-ligatures: none;
   // }
 }
 </style>

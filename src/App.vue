@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app size-fill-viewport">
     <router-view />
   </div>
 </template>
@@ -22,11 +22,12 @@
 /* CSS Global Style Variables */
 
 :root {
+  font-size: 16px;
+
   --background-color-default: #000;
   --accent-color: rgb(223, 69, 22);
 
   --font-family: "Space Mono", monospace;
-  --font-size: 16px;
   --font-style-default: normal;
   --font-weight-normal: 400;
   --font-weight-bold: 800;
@@ -44,6 +45,14 @@
 
 /* CSS Global Styles */
 
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
 body {
   background-color: var(--background-color-default);
   font: var(--font-style-default) var(--font-weight-normal) 1em
@@ -54,17 +63,33 @@ body {
   letter-spacing: var(--font-letter-spacing-default);
   font-variant-ligatures: var(--font-variant-ligatures);
   word-spacing: var(--font-word-spacing-default);
-
-  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
+  overflow-x: inherit;
   -webkit-overflow-scrolling: touch;
+}
+
+.size-fill-viewport {
+  width: 100%;
+  height: 100%;
+}
+
+.display-flex-column {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .scroll-snap-start {
   scroll-snap-align: start;
+}
+
+.user-select-none {
+  cursor: default;
+  user-select: none;
 }
 
 /* App Layout */
@@ -74,5 +99,7 @@ body {
   height: 100vh;
 
   border: 3px solid rgb(63, 63, 63);
+
+  overflow: hidden;
 }
 </style>

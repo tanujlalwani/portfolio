@@ -1,6 +1,6 @@
 <template>
-  <div class="about scroll-snap-start">
-    <marquee-text class="marquee-about" :repeat="8" :duration="10">Who are you?&nbsp;•&nbsp;</marquee-text>
+  <div class="about size-fill-viewport display-flex-column scroll-snap-start">
+    <!-- <marquee-text class="marquee-about" :repeat="8" :duration="10">Who are you?&nbsp;•&nbsp;</marquee-text> -->
     <p
       class="about-text"
       v-bind:class="{ 'about-text-creative': creativeOn, 'about-text-technologist': technologistOn}"
@@ -62,52 +62,32 @@ export default {
 </script>
 
 <style lang="scss">
-.about {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-}
-
 .about-text {
-  flex-basis: 0.8;
-  flex-grow: 1;
   width: 60%;
 
-  font: 1.8em "Space Mono", monospace;
-  font-weight: 300;
-  color: rgb(255, 255, 255);
-
-  line-height: 1.3;
-  letter-spacing: 0;
-  word-spacing: -0.2rem;
-  font-variant-ligatures: none;
-
-  text-align: left;
+  font-size: 1.8rem;
   cursor: default;
 
   .creative,
   .technologist {
     cursor: pointer;
     text-decoration: underline solid;
-    font-weight: 800;
-    color: yellow;
+    font-weight: var(--font-weight-bold);
+    color: var(--accent-color);
   }
 }
 
 .about-text-creative {
-  font: 2em "Flow", monospace;
-  line-height: 1.04;
-  word-spacing: 0.48rem;
+  font: 1.98rem "Flow", monospace;
+  line-height: 1.04em;
+  word-spacing: 0.25em;
   transform: scaleY(1.1);
 
   .creative {
-    cursor: pointer;
-    font: 0.9em "Space Mono", monospace;
-    text-decoration: underline solid;
+    transform: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    font-size: 1.8rem;
   }
 
   background: linear-gradient(
@@ -124,9 +104,8 @@ export default {
   );
   background-size: 200% auto;
 
-  color: #000;
   background-clip: text;
-  text-fill-color: transparent;
+  color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -140,10 +119,11 @@ export default {
 
 .about-text-technologist {
   color: green;
-  .creative {
+  .creative,
+  .technologist {
     text-decoration: none;
-    font-weight: 400;
     color: green;
+    font-weight: var(--font-weight-normal);
   }
 }
 </style>
