@@ -24,21 +24,22 @@
 :root {
   font-size: 16px;
 
-  --background-color-default: #000;
-  --accent-color: rgb(223, 69, 22);
+  --background-color-default: #fff;
+  --accent-color: #ff9900;
+  --accent-color-text: #fff;
 
   --font-family: "Space Mono", monospace;
   --font-style-default: normal;
   --font-weight-normal: 400;
   --font-weight-bold: 800;
-  --font-color-default: #fff;
+  --font-color-default: #000;
 
   --font-line-height-default: 1.3;
   --font-letter-spacing-default: 0;
   --font-word-spacing-default: -0.2rem;
   --font-variant-ligatures: none;
 
-  --border-default: 1px solid #fff;
+  --border-default: 1px solid #000;
 
   --size-100-percent: 100%;
 }
@@ -91,6 +92,6 @@ body {
   width: 100vw;
   height: 100vh;
 
-  border: 3px solid rgb(63, 63, 63);
+  /* border: 3px solid #fff; */
 }
 </style>

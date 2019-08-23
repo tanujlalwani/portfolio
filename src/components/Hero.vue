@@ -1,6 +1,10 @@
 <template>
   <div class="hero size-fill-viewport display-flex-column scroll-snap-start">
-    <div class="hero-text user-select-none">Hello! I'm just testing this hero text out.</div>
+    <div class="hero-text user-select-none">
+      They said give your website some personality.
+      <br />So I
+      <span class="hero-text-italic">gave</span> it a personality.
+    </div>
   </div>
 </template>
 
@@ -10,15 +14,23 @@ export default {};
 
 <style lang="scss">
 .hero {
+  background-color: var(--accent-color);
+  justify-content: flex-start;
+
   .hero-text {
-    width: 60%;
+    width: 80%;
+    margin: 3em;
 
-    font-size: 3.5rem;
+    font-size: 2.1rem;
     font-weight: var(--font-weight-bold);
-    text-align: center;
-    color: var(--accent-color);
+    color: var(--accent-color-text);
 
-    line-height: 1.2em;
+    line-height: 1.3em;
+
+    .hero-text-italic {
+      font-weight: var(--font-weight-normal);
+      font-style: italic;
+    }
   }
 }
 </style>
