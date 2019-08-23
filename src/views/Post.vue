@@ -1,9 +1,26 @@
 <template>
-  <article class="post size-fill-viewport" v-html="body"></article>
+  <div>
+    <div class="js-toc"></div>
+    <article class="post size-fill-viewport js-toc-content" v-html="body"></article>
+  </div>
 </template>
 
 <script>
+import tocbot from "tocbot";
+
 export default {
+  mounted() {
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: ".js-toc",
+      // Where to grab the headings to build the table of contents.
+      contentSelector: ".post-body",
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: "h1, h2, h3",
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true
+    });
+  },
   created() {
     this.body = require("../assets/posts/" + this.title + "/post.md");
   },
@@ -17,6 +34,9 @@ export default {
 </script>
 
 <style lang="scss">
+// @import "../styles/tocbot-core";
+// @import "../styles/tocbot-default-theme";
+
 .post {
   overflow-y: scroll;
 }

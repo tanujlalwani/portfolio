@@ -45,6 +45,8 @@ export default {
 <style lang="scss">
 .home {
   overflow-y: scroll;
+
+  overscroll-behavior: contain;
   scroll-snap-type: y mandatory;
 }
 
