@@ -5,6 +5,13 @@
         name: 'post',
         params: { title: post.path },
       }"
+    v-observe-visibility="{
+        callback: visibilityChanged,
+        intersection: {
+          threshold: 0.55,
+        }
+      }"
+    :class="{ visible: isVisible }"
   >
     <video
       v-if="post.coverVideo"
@@ -35,9 +42,14 @@
 export default {
   props: ["index", "post"],
   data() {
-    return {};
+    return {
+      isVisible: false
+    };
   },
   methods: {
+    visibilityChanged(isVisible, entry) {
+      this.isVisible = isVisible;
+    },
     getCoverImage(path) {
       return require("../assets/posts/" + path + "/cover.png");
     },
@@ -73,7 +85,14 @@ export default {
     object-fit: cover;
   }
 
+  video[poster] {
+    object-fit: cover;
+  }
+
   // .post-list-item-title {
   // }
+}
+
+.visible {
 }
 </style>
