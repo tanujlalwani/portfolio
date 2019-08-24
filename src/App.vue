@@ -77,9 +77,9 @@ body {
   justify-content: center;
 }
 
-.scroll-snap-start {
+/* .scroll-snap-start {
   scroll-snap-align: start;
-}
+} */
 
 .user-select-none {
   cursor: default;

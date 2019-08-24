@@ -1,11 +1,11 @@
 <template>
-  <div class="hero size-fill-viewport display-flex-column scroll-snap-start">
+  <section class="hero size-fill-viewport display-flex-column scroll-snap-start">
     <div class="hero-text user-select-none">
       They said give your website some personality.
       <br />So I
       <span class="hero-text-italic">gave</span> it a personality.
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

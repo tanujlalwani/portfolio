@@ -47,19 +47,6 @@ export default {
   overflow-y: scroll;
 
   overscroll-behavior: contain;
-  scroll-snap-type: y mandatory;
-}
-
-.marquee-text-wrap {
-  padding: 0.5em 0 0.5em 0;
-
-  border: var(--border-default);
-  border-left: 0;
-  border-right: 0;
-}
-
-.marquee-text-text {
-  font-size: 2em;
-  font-weight: var(--font-weight-bold);
+  // scroll-snap-type: y mandatory;
 }
 </style>

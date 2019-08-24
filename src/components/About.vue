@@ -1,27 +1,29 @@
 <template>
-  <div class="about size-fill-viewport display-flex-column scroll-snap-start">
-    <!-- <marquee-text class="marquee-about" :repeat="8" :duration="10">Who are you?&nbsp;•&nbsp;</marquee-text> -->
-    <p
-      class="about-text"
-      v-bind:class="{ 'about-text-creative': creativeOn, 'about-text-technologist': technologistOn}"
-    >
-      {{ technologistOn ? technologistBinary[0] : technologistText[0] }}
-      <span
-        class="creative"
-        @click="creativeClick"
-        @mouseleave="creativeHoverOff"
-      >{{ technologistOn ? technologistBinary[1] : technologistText[1] }}</span>
-      {{ technologistOn ? technologistBinary[2] : technologistText[2] }}
-      <span
-        class="technologist"
-        @click="technologistClick()"
-        @mouseleave="technologistHoverOff"
-      >technologist</span>
-      {{ technologistOn ? technologistBinary[3] : technologistText[3] }}
-      <br />
-      <br />- Tanuj
-    </p>
-  </div>
+  <section class="about size-fill-viewport scroll-snap-start">
+    <marquee-text class="marquee-about" :repeat="8" :duration="10">ARTIFICIAL TANGERINE&nbsp;•&nbsp;</marquee-text>
+    <div class="about-text-wrapper display-flex-column">
+      <p
+        class="about-text"
+        v-bind:class="{ 'about-text-creative': creativeOn, 'about-text-technologist': technologistOn}"
+      >
+        {{ technologistOn ? technologistBinary[0] : technologistText[0] }}
+        <span
+          class="creative"
+          @mouseenter="creativeClick"
+          @mouseleave="creativeHoverOff"
+        >{{ technologistOn ? technologistBinary[1] : technologistText[1] }}</span>
+        {{ technologistOn ? technologistBinary[2] : technologistText[2] }}
+        <span
+          class="technologist"
+          @mouseenter="technologistClick()"
+          @mouseleave="technologistHoverOff"
+        >technologist</span>
+        {{ technologistOn ? technologistBinary[3] : technologistText[3] }}
+        <br />
+        <br />- Tanuj
+      </p>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -49,23 +51,29 @@ export default {
       if (!this.technologistOn) this.creativeOn = !this.creativeOn;
     },
     creativeHoverOff: function() {
-      setTimeout(() => (this.creativeOn = false), 1000);
+      this.creativeOn = false;
     },
     technologistClick: function() {
       if (!this.creativeOn) this.technologistOn = !this.technologistOn;
     },
     technologistHoverOff: function() {
-      setTimeout(() => (this.technologistOn = false), 1000);
+      this.technologistOn = false;
     }
   }
 };
 </script>
 
 <style lang="scss">
+.about-text-wrapper {
+  height: 100%;
+  flex-grow: 1;
+}
+
 .about-text {
   width: 60%;
+  // flex-grow: 1;
 
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   cursor: default;
 
   .creative,
@@ -76,31 +84,42 @@ export default {
     color: var(--accent-color);
   }
 }
+.marquee-about {
+  align-self: flex-start;
+  user-select: none;
+}
+
+.marquee-text-wrap {
+  padding: 0.5em 0 0.5em 0;
+}
+
+.marquee-text-text {
+  font-size: 1em;
+}
 
 .about-text-creative {
-  font: 1.98rem "Flow", monospace;
-  line-height: 1.04em;
-  word-spacing: 0.25em;
-  transform: scaleY(1.1);
+  user-select: none;
 
   .creative {
     transform: none;
     font-family: var(--font-family);
     font-weight: var(--font-weight-bold);
-    font-size: 1.8rem;
   }
 
   background: linear-gradient(
     100deg,
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    indigo,
-    violet,
-    red
+    #ff3b3b,
+    #fa9826,
+    #ffd400,
+    #c2ff00,
+    #00ffde,
+    #6ae2cb,
+    #00ccff,
+    #00ffde,
+    #c2ff00,
+    #ffd400,
+    #fa9826,
+    #ff3b3b
   );
   background-size: 200% auto;
 
@@ -109,7 +128,7 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: rainbow 1.2s linear infinite;
+  animation: rainbow 1.5s linear infinite;
   @keyframes rainbow {
     to {
       background-position: 200% center;
@@ -118,6 +137,8 @@ export default {
 }
 
 .about-text-technologist {
+  user-select: none;
+
   color: green;
   .creative,
   .technologist {

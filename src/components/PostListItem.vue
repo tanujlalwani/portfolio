@@ -65,7 +65,7 @@ export default {
 
   // padding: 1rem;
 
-  scroll-snap-align: start;
+  // scroll-snap-align: start;
   overflow: hidden;
 
   .post-list-item-image,
