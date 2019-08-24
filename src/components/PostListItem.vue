@@ -82,6 +82,10 @@ export default {
 
   .post-list-item-image,
   .post-list-item-video {
+    // width: 90%;
+    // height: 85%;
+    // margin: auto;
+    // display: block;
     object-fit: cover;
   }
 

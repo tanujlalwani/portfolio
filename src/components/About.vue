@@ -9,13 +9,13 @@
         {{ technologistOn ? technologistBinary[0] : technologistText[0] }}
         <span
           class="creative"
-          @mouseenter="creativeClick"
+          @mouseenter="creativeHoverOn"
           @mouseleave="creativeHoverOff"
         >{{ technologistOn ? technologistBinary[1] : technologistText[1] }}</span>
         {{ technologistOn ? technologistBinary[2] : technologistText[2] }}
         <span
           class="technologist"
-          @mouseenter="technologistClick()"
+          @mouseenter="technologistHoverOn"
           @mouseleave="technologistHoverOff"
         >technologist</span>
         {{ technologistOn ? technologistBinary[3] : technologistText[3] }}
@@ -47,13 +47,13 @@ export default {
     };
   },
   methods: {
-    creativeClick: function() {
+    creativeHoverOn: function() {
       if (!this.technologistOn) this.creativeOn = !this.creativeOn;
     },
     creativeHoverOff: function() {
       this.creativeOn = false;
     },
-    technologistClick: function() {
+    technologistHoverOn: function() {
       if (!this.creativeOn) this.technologistOn = !this.technologistOn;
     },
     technologistHoverOff: function() {
