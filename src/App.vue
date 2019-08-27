@@ -1,8 +1,18 @@
 <template>
   <div class="app size-fill-viewport">
     <router-view />
+    <hud></hud>
   </div>
 </template>
+
+<script>
+import HUD from "@components/HUD.vue";
+export default {
+  components: {
+    hud: HUD
+  }
+};
+</script>
 
 <style>
 /* CSS Reset */
@@ -77,9 +87,9 @@ body {
   justify-content: center;
 }
 
-/* .scroll-snap-start {
+.scroll-snap-start {
   scroll-snap-align: start;
-} */
+}
 
 .user-select-none {
   cursor: default;
@@ -87,6 +97,12 @@ body {
 }
 
 /* App Layout */
+
+html,
+body,
+.app {
+  background-color: var(--background-color-default);
+}
 
 .app {
   width: 100vw;
