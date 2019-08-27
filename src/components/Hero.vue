@@ -2,8 +2,8 @@
   <section class="hero size-fill-viewport display-flex-column scroll-snap-start">
     <div class="hero-text user-select-none">
       They said give your website some personality.
-      <br />So I
-      <span class="hero-text-italic">gave</span> it a personality.
+      <br />So he gave it
+      <span class="hero-text-italic">a</span> personality.
     </div>
   </section>
 </template>

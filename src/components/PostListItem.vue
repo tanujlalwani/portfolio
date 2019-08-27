@@ -77,15 +77,16 @@ export default {
 
   // padding: 1rem;
 
-  // scroll-snap-align: start;
+  scroll-snap-align: start;
   overflow: hidden;
 
   .post-list-item-image,
   .post-list-item-video {
-    // width: 90%;
-    // height: 85%;
-    // margin: auto;
-    // display: block;
+    width: 85%;
+    height: 85%;
+    border-radius: 10px;
+    margin: auto;
+    display: block;
     object-fit: cover;
   }
 

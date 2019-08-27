@@ -9,6 +9,7 @@
       :paused="workMarqueePause"
       @mouseover="workMarqueeHover"
     >WORK&nbsp;•&nbsp;WORK&nbsp;•&nbsp;</marquee-text>-->
+    <div class="divider"></div>
     <div class="post-list display-flex-column">
       <post-list-item v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></post-list-item>
     </div>
@@ -44,9 +45,27 @@ export default {
 
 <style lang="scss">
 .home {
+  overflow-x: hidden;
   overflow-y: scroll;
 
   overscroll-behavior: contain;
   // scroll-snap-type: y mandatory;
+
+  .post-list {
+    margin-top: 6em;
+  }
+
+  .divider {
+    height: 1px;
+    width: 105vw;
+    background-image: linear-gradient(
+      to right,
+      black 35%,
+      rgba(255, 255, 255, 0) 0%
+    );
+    background-position: bottom;
+    background-size: 2em 1px;
+    background-repeat: repeat-x;
+  }
 }
 </style>
