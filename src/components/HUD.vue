@@ -21,6 +21,7 @@ export default {
 <style>
 .hud {
   pointer-events: none;
+  z-index: 10000;
 }
 
 .time {

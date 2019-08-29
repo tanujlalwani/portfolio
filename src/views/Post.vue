@@ -1,33 +1,16 @@
 <template>
   <div>
-    <div class="toc" :class="{ 'toc-visible': tocVisible }"></div>
+    <toc></toc>
     <article class="post size-fill-viewport js-toc-content" v-html="body"></article>
   </div>
 </template>
 
 <script>
-import tocbot from "tocbot";
-import { EventBus } from "../event-bus.js";
+import TOC from "@components/TOC.vue";
 
 export default {
-  mounted() {
-    tocbot.init({
-      tocSelector: ".toc",
-      contentSelector: ".post-body",
-      headingSelector: "h1, h2",
-      activeLinkClass: "is-active-link",
-      hasInnerContainers: true,
-      scrollSmoothDuration: 420,
-      headingsOffset: 1,
-      throttleTimeout: 50
-    });
-  },
-  created() {
-    this.body = require("../assets/posts/" + this.title + "/post.md");
-
-    EventBus.$on("toc-clicked", () => {
-      this.tocVisible = true;
-    });
+  components: {
+    toc: TOC
   },
   data() {
     return {
@@ -35,21 +18,14 @@ export default {
       body: null,
       tocVisible: false
     };
+  },
+  created() {
+    this.body = require("../assets/posts/" + this.title + "/post.md");
   }
 };
 </script>
 
 <style lang="scss">
-@import "../styles/tocbot.scss";
-
-.toc {
-  display: none;
-}
-
-.toc-visible {
-  display: block;
-}
-
 .post {
   overflow-y: scroll;
 }
