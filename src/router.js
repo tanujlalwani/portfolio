@@ -3,6 +3,8 @@ import Router from 'vue-router';
 import Home from '@views/Home.vue';
 import Post from '@views/Post.vue';
 
+import Posts from '@posts/posts.json';
+
 Vue.use(Router);
 
 export default new Router({
@@ -23,7 +25,10 @@ export default new Router({
     {
       path: '/post/:title',
       name: 'post',
-      component: Post
+      component: Post,
+      props: route => ({
+        post: Posts.posts.filter(post => route.params.title == post.path)[0]
+      })
     }
     // {
     //   path: '/about',
