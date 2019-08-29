@@ -9,6 +9,7 @@
 import TOC from "@components/TOC.vue";
 
 export default {
+  name: "post",
   components: {
     toc: TOC
   },
@@ -31,7 +32,7 @@ export default {
 }
 
 .post-header {
-  height: 98vh;
+  height: 100vh;
   widows: 100vw;
 
   margin: 0 auto;
@@ -50,7 +51,7 @@ export default {
 
     height: 6px;
     width: 105vw;
-    background-image: linear-gradient(to right, #fff 45%, rgba(0, 0, 0, 1) 0%);
+    background-image: linear-gradient(to right, #fff 45%, rgba(0, 0, 0, 0) 0%);
     background-position: bottom;
     background-size: 2.5em 5px;
     background-repeat: repeat-x;

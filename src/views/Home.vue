@@ -24,6 +24,7 @@ import PostListItem from "@components/PostListItem.vue";
 import Posts from "@posts/posts.json";
 
 export default {
+  name: "home",
   components: {
     Hero,
     About,
@@ -45,11 +46,11 @@ export default {
 
 <style lang="scss">
 .home {
-  overflow-x: hidden;
-  overflow-y: scroll;
+  // overflow-x: hidden;
+  // overflow-y: scroll;
 
   overscroll-behavior: contain;
-  // scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
 
   .post-list {
     margin-top: 6em;

@@ -6,6 +6,15 @@ import Post from '@views/Post.vue';
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
+  scrollBehavior(to, from, savedPosition) {
+    console.log(savedPosition);
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { x: 0, y: 0 };
+    }
+  },
   routes: [
     {
       path: '/',
