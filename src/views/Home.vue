@@ -42,12 +42,17 @@ export default {
   // overflow-x: hidden;
   // overflow-y: scroll;
 
+  .post-list {
+    .post-list-item:first-child {
+      margin-top: 5vh;
+    }
+    .post-list-item:last-child {
+      margin-bottom: 5vh;
+    }
+  }
+
   overscroll-behavior: contain;
   scroll-snap-type: y mandatory;
-
-  .post-list {
-    margin-top: 6em;
-  }
 
   .divider {
     height: 1px;

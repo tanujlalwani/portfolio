@@ -45,8 +45,6 @@ export default {
   width: 100%;
   height: 100vh;
 
-  padding: 1rem;
-
   scroll-snap-align: start;
   overflow: hidden;
 }

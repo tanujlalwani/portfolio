@@ -1,12 +1,6 @@
-<div class="post-header">
-
-![The Aditi Wall: Cover](cover.svg 'The Aditi Wall: Cover')
-
-</div>
-
 <div class="post-body">
 
-The Aditi Wall is a modern, digital revival of the print magazine by the same name, published by the students of Mallya Aditi. With a focus on a minimalistic design and engaging content, The Aditi Wall aims to reinvigorate the community’s passions for sharing their unique perspectives through high quality journalism in a form adapted for the 21st century.
+<div class="introduction">The Aditi Wall is a modern, digital revival of the print magazine by the same name, published by the students of Mallya Aditi. With a focus on a minimalistic design and engaging content, The Aditi Wall aims to reinvigorate the community’s passions for sharing their unique perspectives through high quality journalism in a form adapted for the 21st century.</div>
 
 ---
 

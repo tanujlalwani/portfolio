@@ -1,27 +1,35 @@
 <template>
   <div>
     <toc></toc>
+    <post-cover class="post-header" id="cover" v-bind:post="post"></post-cover>
+    <hr class="cover-divider" />
     <article class="post size-fill-viewport js-toc-content" v-html="body"></article>
   </div>
 </template>
 
 <script>
 import TOC from "@components/TOC.vue";
+import PostCover from "@components/PostCover.vue";
 
 export default {
   name: "post",
   components: {
-    toc: TOC
+    toc: TOC,
+    PostCover
   },
   data() {
     return {
-      title: this.$route.params.title,
+      title: this.post.path,
       body: null,
       tocVisible: false
     };
   },
+  props: ["post"],
   created() {
     this.body = require("../assets/posts/" + this.title + "/post.md");
+  },
+  mounted() {
+    document.getElementById("cover").className += " full-cover";
   }
 };
 </script>
@@ -33,34 +41,30 @@ export default {
 
 .post-header {
   height: 100vh;
-  widows: 100vw;
-
+  width: 100vw;
   margin: 0 auto;
-  margin-bottom: 6rem;
+
   p,
   img {
     width: 100%;
     height: 100%;
-    // height: 50rem;
     object-fit: cover;
   }
+}
 
-  hr {
-    position: relative;
-    top: -6px;
+.cover-divider {
+  position: relative;
+  top: -6px;
+  margin: 0 0 6rem 0;
 
-    height: 6px;
-    width: 105vw;
-    background-image: linear-gradient(to right, #fff 45%, rgba(0, 0, 0, 0) 0%);
-    background-position: bottom;
-    background-size: 2.5em 5px;
-    background-repeat: repeat-x;
+  height: 6px;
+  width: 105vw;
+  background-image: linear-gradient(to right, #fff 45%, rgba(0, 0, 0, 0) 0%);
+  background-position: bottom;
+  background-size: 2.5em 5px;
+  background-repeat: repeat-x;
 
-    border: none;
-    margin: 0;
-  }
-  // border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='110'%3E%3Crect width='20' height='.5' style='stroke-width:3;stroke:%23D8D8D8' /%3E%3C/svg%3E")
-  //   27 23 / 50px 30px / 1rem round space;
+  border: none;
 }
 
 .post-body {
@@ -88,6 +92,12 @@ export default {
   p {
     grid-column: text-start/text-end;
     margin-bottom: 1.5rem;
+  }
+
+  ul,
+  li {
+    grid-column: text-start/text-end;
+    margin-left: 1rem;
   }
 
   .introduction {

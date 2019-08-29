@@ -51,19 +51,20 @@ export default {
 
 <style lang="scss">
 .post-cover {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 
   .post-list-item-image,
   .post-list-item-video {
-    width: 85%;
-    height: 85%;
+    width: 85vw;
+    height: 90vh;
     border-radius: 10px;
-    margin: auto;
+    margin: 5vh auto;
     display: block;
     object-fit: cover;
 
-    transition: all 300ms ease-out;
+    // transition-delay: 2s;
+    // transition: all 1000ms ease-in;
   }
 
   video[poster] {
@@ -71,12 +72,14 @@ export default {
   }
 }
 
-.clicked {
+.full-cover {
   .post-list-item-image,
   .post-list-item-video {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     border-radius: 0px;
+
+    margin: auto;
   }
 }
 </style>
