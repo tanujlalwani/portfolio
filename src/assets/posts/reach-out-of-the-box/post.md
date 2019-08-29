@@ -1,6 +1,6 @@
 <div class="post-header">
 
-![Reach Out of the Box: Cover](cover.svg 'Reach Out of the Box: Cover')
+![Reach Out of the Box: Cover](cover.png 'Reach Out of the Box: Cover')
 
 ---
 

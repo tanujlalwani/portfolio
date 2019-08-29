@@ -2,13 +2,6 @@
   <div class="home size-fill-viewport">
     <hero></hero>
     <about></about>
-    <!-- <marquee-text
-      class="user-select-none"
-      :repeat="20"
-      :duration="6"
-      :paused="workMarqueePause"
-      @mouseover="workMarqueeHover"
-    >WORK&nbsp;•&nbsp;WORK&nbsp;•&nbsp;</marquee-text>-->
     <div class="divider"></div>
     <div class="post-list display-flex-column">
       <post-list-item v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></post-list-item>

@@ -13,58 +13,28 @@
       }"
     :class="{ visible: isVisible }"
   >
-    <video
-      v-if="post.coverVideo"
-      :poster="getCoverImage(post.path)"
-      preload="none"
-      playsinline
-      muted
-      class="post-list-item-video size-fill-viewport"
-      :id="'post-list-item-video-' + post.id"
-      loop
-      @mouseenter="playVideo(post.id)"
-      @mouseleave="pauseVideo(post.id)"
-    >
-      <source :src="getCoverVideo(post.path)" type="video/webm" />
-      <source :src="getCoverVideoAlt(post.path)" type="video/mp4" />
-    </video>
-    <img
-      v-else
-      class="post-list-item-image size-fill-viewport"
-      :src="getCoverImage(post.path)"
-      type="image/png"
-    />
-    <!-- <h1 class="post-list-item-title">{{ post.title }}</h1> -->
+    <post-cover v-bind:post="post"></post-cover>
   </router-link>
 </template>
 
 <script>
+import PostCover from "@components/PostCover.vue";
+
 export default {
-  props: ["index", "post"],
+  name: "post-list-item",
+  components: {
+    PostCover
+  },
   data() {
     return {
       isVisible: false
     };
   },
+  props: ["index", "post"],
   methods: {
     visibilityChanged(isVisible, entry) {
+      console.log(entry);
       this.isVisible = isVisible;
-    },
-    getCoverImage(path) {
-      return require("../assets/posts/" + path + "/cover.png");
-    },
-    getCoverVideo(path) {
-      return require("../assets/posts/" + path + "/cover.webm");
-    },
-    getCoverVideoAlt(path) {
-      return require("../assets/posts/" + path + "/cover.mp4");
-    },
-    playVideo(id) {
-      document.getElementById("post-list-item-video-" + id).play();
-    },
-    pauseVideo(id) {
-      document.getElementById("post-list-item-video-" + id).pause();
-      document.getElementById("post-list-item-video-" + id).currentTime = 0;
     }
   }
 };
@@ -75,27 +45,10 @@ export default {
   width: 100%;
   height: 100vh;
 
-  // padding: 1rem;
+  padding: 1rem;
 
   scroll-snap-align: start;
   overflow: hidden;
-
-  .post-list-item-image,
-  .post-list-item-video {
-    width: 85%;
-    height: 85%;
-    border-radius: 10px;
-    margin: auto;
-    display: block;
-    object-fit: cover;
-  }
-
-  video[poster] {
-    object-fit: cover;
-  }
-
-  // .post-list-item-title {
-  // }
 }
 
 .visible {
