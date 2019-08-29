@@ -1,5 +1,5 @@
 <template>
-  <div class="toc" :class="{ 'toc-visible': tocVisible }"></div>
+  <div class="toc display-flex-column" :class="{ 'toc-visible': tocVisible }"></div>
 </template>
 
 <script>
@@ -37,13 +37,47 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../styles/tocbot.scss";
-
 .toc {
-  display: none;
+  --toc-width: 30vw;
+  height: 100vh;
+  width: var(--toc-width);
+  max-width: var(--toc-width);
+
+  position: fixed;
+  top: 0;
+  left: calc(var(--toc-width) * -1);
+
+  z-index: 900;
+  overflow-y: auto;
+
+  transition: all 200ms ease-in-out;
+
+  .toc-list {
+    height: 70vh;
+    padding: 5vw;
+
+    background-color: var(--background-color-default);
+    border: var(--border-default);
+    list-style: none;
+
+    overflow: hidden;
+    display: block;
+    margin: auto;
+
+    li {
+      .toc-link {
+        text-decoration: none;
+        height: 100%;
+      }
+
+      .is-active-link {
+        font-weight: 700;
+      }
+    }
+  }
 }
 
 .toc-visible {
-  display: block;
+  left: 0;
 }
 </style>

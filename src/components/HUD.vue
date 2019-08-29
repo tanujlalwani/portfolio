@@ -1,5 +1,5 @@
 <template>
-  <div class="hud size-fill-viewport">
+  <div class="hud size-fill-viewport user-select-none">
     <span class="circle"></span>
     <span class="section">tangerine v0.1</span>
     <span class="time" @click="emitClickEvent()">10:1234:143/90</span>
@@ -21,13 +21,14 @@ export default {
 <style>
 .hud {
   pointer-events: none;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .time {
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 1000;
 
   margin: 3em;
 
@@ -44,6 +45,7 @@ export default {
   position: fixed;
   bottom: 50vh;
   right: -100px;
+  z-index: 1000;
 
   transform-origin: top left;
   transform: rotate(90deg);
@@ -60,6 +62,7 @@ export default {
   width: 2.5rem;
   background-color: transparent;
   border-radius: 50%;
+  z-index: 1000;
 
   position: fixed;
   bottom: 0;
