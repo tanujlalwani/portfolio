@@ -2,11 +2,13 @@
 
 ![Reach Out of the Box: Cover](cover.svg 'Reach Out of the Box: Cover')
 
+---
+
 </div>
 
 <div class="post-body">
 
-Reach Out of the Box was an unique fundraising event hosted by Mallya Aditi International in collaboration with HelpAge India. The event was centered around a carnival followed by a live concert featuring 5 of India's largest bands. All proceeds from the event went to the victims of the Uttarakhand flood in India.
+<div class="introduction">Reach Out of the Box was an unique fundraising event hosted by Mallya Aditi International in collaboration with HelpAge India. The event was centered around a carnival followed by a live concert featuring 5 of India's largest bands. All proceeds from the event went to the victims of the Uttarakhand flood in India.</div>
 
 ---
 

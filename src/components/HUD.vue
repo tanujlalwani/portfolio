@@ -20,6 +20,7 @@ export default {
 
 <style>
 .hud {
+  position: fixed;
   pointer-events: none;
   z-index: 1000;
 }
