@@ -2,12 +2,20 @@
   <div class="hud size-fill-viewport">
     <span class="circle"></span>
     <span class="section">tangerine v0.1</span>
-    <span class="time">10:1234:143/90</span>
+    <span class="time" @click="emitClickEvent()">10:1234:143/90</span>
   </div>
 </template>
 
 <script>
-export default {};
+import { EventBus } from "../event-bus.js";
+
+export default {
+  methods: {
+    emitClickEvent() {
+      EventBus.$emit("toc-clicked");
+    }
+  }
+};
 </script>
 
 <style>

@@ -1,12 +1,13 @@
 <template>
   <div>
-    <div class="toc"></div>
+    <div class="toc" :class="{ 'toc-visible': tocVisible }"></div>
     <article class="post size-fill-viewport js-toc-content" v-html="body"></article>
   </div>
 </template>
 
 <script>
 import tocbot from "tocbot";
+import { EventBus } from "../event-bus.js";
 
 export default {
   mounted() {
@@ -23,11 +24,16 @@ export default {
   },
   created() {
     this.body = require("../assets/posts/" + this.title + "/post.md");
+
+    EventBus.$on("toc-clicked", () => {
+      this.tocVisible = true;
+    });
   },
   data() {
     return {
       title: this.$route.params.title,
-      body: null
+      body: null,
+      tocVisible: false
     };
   }
 };
@@ -35,6 +41,14 @@ export default {
 
 <style lang="scss">
 @import "../styles/tocbot.scss";
+
+.toc {
+  display: none;
+}
+
+.toc-visible {
+  display: block;
+}
 
 .post {
   overflow-y: scroll;
