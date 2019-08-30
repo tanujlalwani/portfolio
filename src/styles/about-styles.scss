@@ -1,0 +1,98 @@
+.creative,
+.technologist {
+  cursor: pointer;
+  text-decoration: underline solid;
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+
+  transition: color 1s ease;
+}
+
+.about-creative {
+  background: linear-gradient(
+    100deg,
+    #ff3b3b,
+    #fa9826,
+    #ffd400,
+    #c2ff00,
+    #00ffde,
+    #6ae2cb,
+    #00ccff,
+    #00ffde,
+    #c2ff00,
+    #ffd400,
+    #fa9826,
+    #ff3b3b
+  );
+
+  animation: rainbow 2s linear infinite;
+  @keyframes rainbow {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+.about-creative-done {
+  background: linear-gradient(
+    100deg,
+    #ff3b3b,
+    #fa9826,
+    #ffd400,
+    #c2ff00,
+    #00ffde,
+    #6ae2cb,
+    #00ccff,
+    #00ffde,
+    #c2ff00,
+    #ffd400,
+    #fa9826,
+    #ff3b3b,
+    #000 60%
+  );
+
+  animation: rainbowdone 1.5s linear infinite;
+  @keyframes rainbowdone {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+.about-creative,
+.about-creative-done {
+  user-select: none;
+  transition: color 3s ease;
+
+  .creative {
+    transform: none;
+    text-decoration: underline solid;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .technologist {
+    font-weight: var(--font-weight-normal);
+  }
+
+  background-size: 200% auto;
+
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-technologist {
+  user-select: none;
+
+  color: var(--accent-color);
+  .creative,
+  .technologist {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: var(--font-weight-normal);
+  }
+
+  transition: color 1s ease;
+}
