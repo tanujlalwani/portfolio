@@ -1,8 +1,8 @@
 <template>
   <div class="app size-fill-viewport">
-    <!-- <keep-alive include="home" exclude="post"> -->
-    <router-view />
-    <!-- </keep-alive> -->
+    <keep-alive include="home" exclude="post">
+      <router-view />
+    </keep-alive>
     <hud></hud>
   </div>
 </template>
@@ -118,7 +118,5 @@ body,
 .app {
   width: 100vw;
   height: 100vh;
-
-  overflow-x: hidden;
 }
 </style>
