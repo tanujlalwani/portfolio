@@ -66,7 +66,7 @@ export default {
   position: relative;
   top: calc(var(--divider-dash-height) * -1);
 
-  margin: 0 auto 6rem auto;
+  margin: 0 auto 4rem auto;
   border: none;
 
   // using background-image gradient to create a customizable dashed border
@@ -106,9 +106,17 @@ export default {
     padding-top: 1.5rem;
   }
 
+  h2#introduction {
+    grid-row: 1;
+  }
+
   p {
     grid-column: text-start/text-end;
     padding-top: 1.5rem;
+  }
+
+  .image-caption {
+    grid-column: body-start/body-end;
   }
 
   ul {
@@ -128,23 +136,28 @@ export default {
   hr {
     grid-column: page-start/page-end;
   }
+
+  .post-footer {
+    margin: 6rem auto;
+  }
 }
 
 /* Post Body - Styling */
 .post-body {
   h1 {
     font-weight: var(--font-weight-bold);
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   h2 {
     font-weight: var(--font-weight-bold);
     font-size: 1rem;
+  }
 
-    &:focus {
-      outline: 0;
-      text-decoration: underline;
-    }
+  h1:focus,
+  h2:focus {
+    outline: 0;
+    text-decoration: underline;
   }
 
   h3 {
@@ -176,7 +189,7 @@ export default {
 
     font-size: 1.4rem;
     font-weight: var(--font-weight-bold);
-    padding: 0;
+    margin-bottom: 2rem;
   }
 
   hr {
@@ -185,7 +198,7 @@ export default {
     height: 0.11rem;
     width: 105vw;
 
-    margin: 6rem auto 5rem auto;
+    margin: 5rem auto 4rem auto;
 
     border: none;
 
@@ -212,6 +225,20 @@ export default {
   }
 }
 
+.image-caption {
+  font-size: 0.9rem;
+  color: var(--font-color-light);
+
+  text-align: center;
+}
+
+// Image Size Types
+
+.image-width-text {
+  grid-column: text-start/text-end;
+  margin: 3rem auto 1rem auto;
+}
+
 .image-width-body {
   grid-column: body-start/body-end;
 }
@@ -220,18 +247,21 @@ export default {
   grid-column: page-start/page-end;
 }
 
+.image-inline {
+  margin: 3rem auto 2rem auto;
+}
+
+// Image Group Type
+
 .image-group-horizontal {
   width: 100%;
   height: 100%;
 
-  padding-bottom: 1.5rem;
-
   p {
     width: 100%;
-    height: 100%;
 
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
 
@@ -244,13 +274,7 @@ export default {
   }
 }
 
-// .post-body > .image-with-caption {
-//   margin-bottom: 0rem;
-// }
-
-// .post-body > .image-caption {
-//   font-size: 1rem;
-//   color: #777;
-//   font-style: italic;
-// }
+.image-rounded img {
+  border-radius: 0.5rem;
+}
 </style>

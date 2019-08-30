@@ -10,6 +10,12 @@
 
 The event was a nigh-time carnival followed by a concert. This evoked an atmosphere of bright lights, good music, popcorn + cotton candy, and great deal of fun!
 
+<div class="image image-width-full">
+
+![Reach Out of the Box: Moodboard](1.png 'ReachOut: Moodboard')
+
+</div>
+
 ---
 
 ## Leaving a mark
@@ -22,8 +28,8 @@ These characteristics carried over to the final logo: the words Reach Out of the
 
 <div class="image image-width-body image-group-vertical">
 
-![Reach Out of the Box: Final Logo](1.png 'ReachOut: Final Logo')
-![Reach Out of the Box: Logo Process](2.png 'Reach Out of the Box: Logo Process')
+![Reach Out of the Box: Final Logo](2.png 'ReachOut: Final Logo')
+![Reach Out of the Box: Logo Process](3.png 'Reach Out of the Box: Logo Process')
 
 </div>
 
@@ -37,7 +43,7 @@ Having a cleaner design increased the amount of real-estate on the ticket. This 
 
 <div class="image image-width-body">
 
-![Reach Out of the Box: Tickets](3.png 'Reach Out of the Box: Tickets')
+![Reach Out of the Box: Tickets](4.png 'Reach Out of the Box: Tickets')
 
 </div>
 
@@ -50,7 +56,7 @@ The posters were created in the same vein as the tickets, with a stark focus on 
 <div class="image image-width-full image-group-horizontal">
 
 ![Reach Out of the Box: Poster 1](5.png 'ReachOut: Poster 1')
-![Reach Out of the Box: Poster 2](4.png 'ReachOut: Poster 2')
+![Reach Out of the Box: Poster 2](6.png 'ReachOut: Poster 2')
 
 </div>
 
@@ -62,14 +68,10 @@ The visual identity created for the event was applied to tickets, badges, t-shir
 
 <div class="image image-width-full">
 
-![Reach Out of the Box: SWAG](6.png 'ReachOut: Logo Process')
+![Reach Out of the Box: SWAG](7.png 'ReachOut: Logo Process')
 
 </div>
 
+<div class="post-footer"></div>
+
 </div>
-
-<!-- <div class="image image-light">
-
-![Learned](https://mir-s3-cdn-cf.behance.net/project_modules/fs/8b88ec66009859.5b0ce45581186.png "Learned")
-
-</div> -->

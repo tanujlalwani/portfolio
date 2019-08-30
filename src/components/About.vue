@@ -26,7 +26,8 @@
           class="about-technologist-text"
         >{{ technologistOn ? technologistBinary[3] : technologistText[3] }}</span>
         <br />
-        <br />- Tanuj
+        <br />-&nbsp;
+        <span class="about-technologist-text">Tanuj</span>
       </p>
     </div>
   </section>
