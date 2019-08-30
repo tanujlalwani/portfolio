@@ -35,10 +35,13 @@ export default {
 </script>
 
 <style lang="scss">
+// Post Component: Layout
 .post {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
+// Post Header: Layout + Styling
 .post-header {
   height: 100vh;
   width: 100vw;
@@ -52,32 +55,46 @@ export default {
   }
 }
 
+// Post Cover Divider: Layout + Styling
 .cover-divider {
-  position: relative;
-  top: -6px;
-  margin: 0 0 6rem 0;
+  --divider-dash-width: 2.5rem;
+  --divider-dash-height: 0.4rem;
 
-  height: 6px;
+  height: var(--divider-dash-height);
   width: 105vw;
+
+  position: relative;
+  top: calc(var(--divider-dash-height) * -1);
+
+  margin: 0 auto 6rem auto;
+  border: none;
+
+  // using background-image gradient to create a customizable dashed border
   background-image: linear-gradient(to right, #fff 45%, rgba(0, 0, 0, 0) 0%);
   background-position: bottom;
-  background-size: 2.5em 5px;
+  background-size: var(--divider-dash-width) var(--divider-dash-height);
   background-repeat: repeat-x;
-
-  border: none;
 }
 
+/* Post Body - CSS Grid Layout */
 .post-body {
   display: grid;
-  grid-template-columns: minmax(0px, 4fr) [header-start] 2fr [header-end text-start] 6fr [text-end] minmax(
-      0px,
-      4fr
-    );
-  gridwidth: 100%;
-
-  // display: flex;
-  // flex-flow: column nowrap;
-  // align-items: center;
+  grid-template-columns:
+    [page-start]
+    minmax(0px, 3fr)
+    [body-start]
+    minmax(0px, 1fr)
+    [header-start]
+    2.5fr
+    [header-end]
+    0.35fr
+    [text-start]
+    6fr
+    [text-end]
+    minmax(0px, 1fr)
+    [body-end]
+    minmax(0px, 3fr)
+    [page-end];
 
   h1,
   h2,
@@ -86,138 +103,154 @@ export default {
   h5,
   h6 {
     grid-column: header-start/header-end;
-    margin-right: 1rem;
+    padding-top: 1.5rem;
   }
 
   p {
     grid-column: text-start/text-end;
-    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
   }
 
-  ul,
-  li {
+  ul {
+    padding-top: 1.5rem;
     grid-column: text-start/text-end;
-    margin-left: 1rem;
+    margin: auto 3rem;
+
+    li {
+      padding-top: 0.75rem;
+    }
   }
 
   .introduction {
-    color: #0050ff;
-    font-size: 1.4rem;
-    font-weight: var(--font-weight-bold);
-    line-height: 1.5;
     grid-column: header-start/text-end;
-
-    // border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='110'%3E%3Crect width='20' height='.5' style='stroke-width:3;stroke:%23D8D8D8' /%3E%3C/svg%3E")
-    //   27 23 / 50px 30px / 1rem round space;
   }
 
-  .image,
   hr {
-    grid-column: 1/13;
+    grid-column: page-start/page-end;
+  }
+}
+
+/* Post Body - Styling */
+.post-body {
+  h1 {
+    font-weight: var(--font-weight-bold);
+    font-size: 2rem;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  li {
-    font: normal 400 1rem/1.58 "Space Mono";
-    color: inherit;
-    letter-spacing: -0.003em;
-    word-break: normal;
-    word-wrap: normal;
-    // width: 33rem;
+  h2 {
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+
+    &:focus {
+      outline: 0;
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+
+  h4 {
+    color: var(--font-color-light);
+    font-size: 0.9rem;
+  }
+
+  p {
+    line-height: 1.58;
   }
 
   ul {
     list-style-type: circle;
   }
 
-  li {
-    margin-top: 0;
+  h2#introduction {
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
   }
 
-  h1 {
-    font-weight: 800;
-    font-size: 1rem;
-  }
+  .introduction {
+    color: #05f;
 
-  h2 {
-    font-weight: 700;
-    font-size: 1rem;
-  }
-
-  h3 {
-    font-weight: 600;
     font-size: 1.4rem;
-  }
-
-  h4 {
-    font-weight: 500;
-    font-size: 1.2rem;
-    font-style: italic;
+    font-weight: var(--font-weight-bold);
+    padding: 0;
   }
 
   hr {
-    margin: 6rem auto;
-    height: 1px;
+    overflow: hidden;
+
+    height: 0.11rem;
     width: 105vw;
 
-    opacity: 0.3;
-    background-image: linear-gradient(to right, #000 35%, #fff 0%);
-    background-position: bottom;
-    background-size: 2em 1px;
-    background-repeat: repeat-x;
+    margin: 6rem auto 5rem auto;
 
     border: none;
-  }
-}
 
-img {
-  display: block;
-  margin: 0 auto;
+    // using background-image gradient to create a customizable dashed border
+    opacity: 0.15;
+    background-image: linear-gradient(to right, #000 35%, #fff 0%);
+    background-position: bottom;
+    background-size: 2rem 0.11rem;
+    background-repeat: repeat-x;
+  }
 }
 
 .image {
-  width: 100%;
-  margin-top: 5rem;
+  margin-top: 6rem;
 
-  &:last-child {
-    margin-bottom: 0;
+  p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    img {
+      width: 100%;
+    }
   }
 }
 
-.post-body > .image-with-caption {
-  margin-bottom: 0rem;
+.image-width-body {
+  grid-column: body-start/body-end;
 }
 
-.post-body > .image-caption {
-  font-size: 1rem;
-  color: #777;
-  font-style: italic;
+.image-width-full {
+  grid-column: page-start/page-end;
 }
 
-/* .image-horizontal > p {
-  display: flex;
-} */
-
-.image-horizontal > p > img {
-  width: auto;
-}
-
-.image > p {
+.image-group-horizontal {
   width: 100%;
-  padding: 0;
-  margin: 0;
+  height: 100%;
+
+  padding-bottom: 1.5rem;
+
+  p {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 49.25%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+    }
+  }
 }
 
-.post-body img {
-  width: 70%;
-  display: block;
-  margin: 0 auto;
-}
+// .post-body > .image-with-caption {
+//   margin-bottom: 0rem;
+// }
+
+// .post-body > .image-caption {
+//   font-size: 1rem;
+//   color: #777;
+//   font-style: italic;
+// }
 </style>

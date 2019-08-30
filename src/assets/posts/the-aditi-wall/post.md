@@ -1,6 +1,8 @@
 <div class="post-body">
 
-<div class="introduction">The Aditi Wall is a modern, digital revival of the print magazine by the same name, published by the students of Mallya Aditi. With a focus on a minimalistic design and engaging content, The Aditi Wall aims to reinvigorate the community’s passions for sharing their unique perspectives through high quality journalism in a form adapted for the 21st century.</div>
+## Introduction
+
+<p class="introduction">The Aditi Wall is a modern, digital revival of the print magazine by the same name, published by the students of Mallya Aditi. With a focus on a minimalistic design and engaging content, The Aditi Wall aims to reinvigorate the community’s passions for sharing their unique perspectives through high quality journalism in a form adapted for the 21st century.</p>
 
 ---
 
@@ -39,9 +41,9 @@ From the analysis of the user surveys, it was evident that there was a pain poin
 
 #### Light
 
-<div class="image image-light image-horizontal"></div>
-
 With the light theme, the mood being created was that of sitting in your comfortable pyjamas with a good book, on a sunny day.
+
+<div class="image image-light image-horizontal"></div>
 
 #### Dark
 

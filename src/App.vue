@@ -1,8 +1,8 @@
 <template>
   <div class="app size-fill-viewport">
-    <keep-alive include="home" exclude="post">
-      <router-view include="home" />
-    </keep-alive>
+    <!-- <keep-alive include="home" exclude="post"> -->
+    <router-view />
+    <!-- </keep-alive> -->
     <hud></hud>
   </div>
 </template>
@@ -37,19 +37,25 @@ export default {
   font-size: 16px;
 
   --background-color-default: #fff;
-  --accent-color: #ff9900;
-  --accent-color-text: #fff;
+  --primary-color: #ff9900;
+  --primary-color-text: #fff;
+
+  --accent-color: #05f;
 
   --font-family: "Space Mono", monospace;
   --font-style-default: normal;
   --font-weight-normal: 400;
   --font-weight-bold: 800;
   --font-color-default: #000;
+  --font-color-light: #666;
 
   --font-line-height-default: 1.3;
-  --font-letter-spacing-default: 0;
+  --font-letter-spacing-default: -0.003rem;
   --font-word-spacing-default: -0.2rem;
   --font-variant-ligatures: none;
+
+  --text-word-break: keep-all;
+  --text-word-wrap: normal;
 
   --border-default: 1px solid #000;
 
@@ -68,6 +74,9 @@ body {
   letter-spacing: var(--font-letter-spacing-default);
   font-variant-ligatures: var(--font-variant-ligatures);
   word-spacing: var(--font-word-spacing-default);
+
+  word-break: var(--text-word-break);
+  word-wrap: var(--text-word-wrap);
 
   overflow-x: hidden;
 }
@@ -110,6 +119,6 @@ body,
   width: 100vw;
   height: 100vh;
 
-  /* border: 3px solid #fff; */
+  overflow-x: hidden;
 }
 </style>

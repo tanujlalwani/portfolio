@@ -71,7 +71,7 @@ export default {
 
   margin: 3em;
 
-  border: 2px solid var(--accent-color-text);
+  border: 2px solid var(--primary-color-text);
   mix-blend-mode: difference;
 
   pointer-events: auto;

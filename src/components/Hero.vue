@@ -14,7 +14,7 @@ export default {};
 
 <style lang="scss">
 .hero {
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   justify-content: flex-start;
 
   .hero-text {
@@ -23,7 +23,7 @@ export default {};
 
     font-size: 2.1rem;
     font-weight: var(--font-weight-bold);
-    color: var(--accent-color-text);
+    color: var(--primary-color-text);
 
     line-height: 1.3em;
 

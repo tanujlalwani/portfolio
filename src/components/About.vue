@@ -81,7 +81,7 @@ export default {
     cursor: pointer;
     text-decoration: underline solid;
     font-weight: var(--font-weight-bold);
-    color: var(--accent-color);
+    color: var(--primary-color);
   }
 }
 .marquee-about {
