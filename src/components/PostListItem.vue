@@ -5,19 +5,14 @@
         name: 'post',
         params: { title: post.path },
       }"
-    v-observe-visibility="{
-        callback: visibilityChanged,
-        intersection: {
-          threshold: 0.55,
-        }
-      }"
-    :class="{ visible: isVisible }"
   >
     <post-cover v-bind:post="post"></post-cover>
   </router-link>
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
+
 import PostCover from "@components/PostCover.vue";
 
 export default {
@@ -30,13 +25,7 @@ export default {
       isVisible: false
     };
   },
-  props: ["index", "post"],
-  methods: {
-    visibilityChanged(isVisible, entry) {
-      console.log(entry);
-      this.isVisible = isVisible;
-    }
-  }
+  props: ["index", "post"]
 };
 </script>
 
@@ -47,8 +36,5 @@ export default {
 
   scroll-snap-align: start;
   overflow: hidden;
-}
-
-.visible {
 }
 </style>

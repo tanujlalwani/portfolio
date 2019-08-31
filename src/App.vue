@@ -3,17 +3,11 @@
     <keep-alive include="home" exclude="post">
       <router-view />
     </keep-alive>
-    <hud></hud>
   </div>
 </template>
 
 <script>
-import HUD from "@components/HUD.vue";
-export default {
-  components: {
-    hud: HUD
-  }
-};
+export default {};
 </script>
 
 <style>

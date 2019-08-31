@@ -1,8 +1,8 @@
 <template>
   <div class="hud size-fill-viewport user-select-none">
-    <span class="circle"></span>
+    <!-- <span class="circle"></span> -->
+    <span class="title" @click="emitClickEvent()">{{ postTitle }}</span>
     <span class="section">tangerine v0.1</span>
-    <span class="time" @click="emitClickEvent()">10:1234:143/90</span>
   </div>
 </template>
 
@@ -10,10 +10,20 @@
 import { EventBus } from "../event-bus.js";
 
 export default {
+  data() {
+    return {
+      postTitle: "10:1234:143/90"
+    };
+  },
   methods: {
     emitClickEvent() {
       EventBus.$emit("toc-clicked");
     }
+  },
+  created() {
+    EventBus.$on("post-item-visible", title => {
+      this.postTitle = title;
+    });
   }
 };
 </script>
@@ -23,20 +33,20 @@ export default {
   position: fixed;
   pointer-events: none;
   z-index: 1000;
+
+  font-size: 1.2rem;
 }
 
-.time {
+.title {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-
-  margin: 3em;
+  /* z-index: 1000; */
+  text-align: center;
+  width: 100vh;
+  margin-left: 3rem;
 
   transform-origin: top left;
   transform: rotate(-90deg);
 
-  color: #bdbdbd;
   mix-blend-mode: difference;
 
   pointer-events: auto;
@@ -44,14 +54,17 @@ export default {
 
 .section {
   position: fixed;
-  bottom: 50vh;
-  right: -100px;
-  z-index: 1000;
+  top: 0;
+  right: 0;
+  /* z-index: 1000; */
+  text-align: center;
+  width: 100vh;
+  /* margin-right: -3rem */
 
-  transform-origin: top left;
+  /* transform-origin: top right; */
   transform: rotate(90deg);
 
-  color: #bdbdbd;
+  /* color: #bdbdbd; */
   mix-blend-mode: difference;
 
   pointer-events: auto;
