@@ -1,5 +1,5 @@
 <template>
-  <section class="about size-fill-viewport display-flex-column scroll-snap-start">
+  <section class="about size-fill-viewport scroll-snap-start">
     <div class="marquee-wrapper" @mouseenter="marqueeToggle()" @mouseleave="marqueeToggle()">
       <marquee-text class="marquee-about" :repeat="8" :duration="20">
         ARTIFICIAL TANGERINE&nbsp;
@@ -106,8 +106,7 @@ export default {
 @import "../styles/about-styles.scss";
 
 .about-text-wrapper {
-  height: 100%;
-  flex-grow: 1;
+  height: 90%;
 }
 
 .about-text {
@@ -119,7 +118,7 @@ export default {
 
 .marquee-wrapper {
   width: 100vw;
-  height: 5vh;
+  flex-grow: 1;
 
   position: relative;
 }

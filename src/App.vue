@@ -1,14 +1,34 @@
 <template>
   <div class="app size-fill-viewport">
     <router-view />
+    <span class="section user-select-none" @click="emitClickEvent()">{{ postTitle }}</span>
+    <span class="nav user-select-none" @click="emitClickEvent()"></span>
   </div>
 </template>
 
 <script>
-export default {};
+import { EventBus } from "./event-bus.js";
+
+export default {
+  data() {
+    return {
+      postTitle: "tangerine v0.1"
+    };
+  },
+  methods: {
+    emitClickEvent() {
+      EventBus.$emit("nav-clicked");
+    }
+  },
+  created() {
+    EventBus.$on("post-item-visible", title => {
+      this.postTitle = title;
+    });
+  }
+};
 </script>
 
-<style>
+<style lang="scss">
 /* CSS Reset */
 @import "./styles/_reset.scss";
 
@@ -105,10 +125,50 @@ html,
 body,
 .app {
   background-color: var(--background-color-default);
+  z-index: 0;
 }
 
 .app {
   width: 100vw;
   height: 100vh;
+}
+
+.section {
+  position: fixed;
+  bottom: 0;
+  right: 4rem;
+
+  color: #222;
+
+  transform-origin: top right;
+  transform: rotate(90deg);
+
+  width: 100vh;
+  text-align: center;
+
+  mix-blend-mode: difference;
+  z-index: 1000 !important;
+}
+
+.nav {
+  width: 2rem;
+  height: 2rem;
+
+  border-radius: 50%;
+  border: 0.2rem solid #222;
+
+  position: fixed;
+  bottom: 3.5rem;
+  right: 3.5rem;
+  font-size: 3rem;
+
+  text-align: center;
+
+  z-index: 1000 !important;
+  mix-blend-mode: difference;
+
+  &:hover {
+    background-color: #222;
+  }
 }
 </style>

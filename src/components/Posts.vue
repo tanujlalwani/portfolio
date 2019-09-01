@@ -179,7 +179,7 @@ export default {
 @media only screen and (max-width: 600px) {
   .posts {
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 10fr);
+    grid-template-rows: fit-content(20vh) 1fr fit-content(250vh);
 
     .marquee-work {
       grid-column: 1/2;
@@ -195,7 +195,7 @@ export default {
       width: 100vw;
 
       grid-column: 1/2;
-      grid-row: 9/11;
+      grid-row: 3/4;
 
       overflow-y: hidden;
       overflow-x: scroll;
@@ -235,7 +235,7 @@ export default {
     .post-cover-background,
     .noise {
       grid-column: 1/2;
-      grid-row: 1/9;
+      grid-row: 2/3;
     }
   }
 }
