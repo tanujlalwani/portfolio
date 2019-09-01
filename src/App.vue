@@ -46,8 +46,6 @@ export default {
 /* CSS Global Style Variables */
 
 :root {
-  font-size: 16px;
-
   --background-color-default: #fff;
   --primary-color: #ff9900;
   --primary-color-text: #fff;
@@ -169,6 +167,99 @@ body,
 
   &:hover {
     background-color: #222;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  :root {
+    font-size: 28px !important;
+  }
+}
+
+@media only screen and (min-width: 2300px) and (max-width: 2500px) {
+  :root {
+    font-size: 26px !important;
+  }
+}
+
+@media only screen and (min-width: 2100px) and (max-width: 2300px) {
+  :root {
+    font-size: 24px !important;
+  }
+}
+
+@media only screen and (min-width: 1900px) and (max-width: 2100px) {
+  :root {
+    font-size: 22px !important;
+  }
+}
+
+@media only screen and (min-width: 1700px) and (max-width: 1900px) {
+  :root {
+    font-size: 20px !important;
+  }
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1700px) {
+  :root {
+    font-size: 18px !important;
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1500px) {
+  :root {
+    font-size: 16px !important;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1300px) {
+  :root {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  :root {
+    font-size: 15px !important;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 800px) {
+  :root {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 550px) {
+  :root {
+    font-size: 13px !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  :root {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  :root {
+    font-size: 11px !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  :root {
+    font-size: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  :root {
+    .nav,
+    .section {
+      display: none;
+    }
   }
 }
 </style>
