@@ -1,5 +1,9 @@
 <template>
   <section class="posts size-fill-viewport" @mouseleave="updatePostView(null)">
+    <marquee-text class="marquee-work" :repeat="5" :duration="20" paused>
+      WORK
+      <span class="strikethrough">IN PROGRESS</span>&nbsp;•&nbsp;
+    </marquee-text>
     <div class="posts-list">
       <router-link
         class="posts-list-link"
@@ -96,13 +100,29 @@ export default {
 </script>
 
 <style lang="scss">
+.marquee-work {
+  user-select: none;
+  font-size: 2rem;
+  background-color: #000;
+  color: #fff;
+  padding: 1rem 0;
+  grid-row: auto;
+
+  grid-column: 1/13;
+
+  .strikethrough {
+    text-decoration: underline;
+    text-decoration-line: line-through;
+  }
+}
+
 .posts {
   width: 100vw;
   height: 100vh;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(1, 1fr);
+  grid-template-rows: fit-content(10rem) repeat(9, 1fr);
 
   overflow: hidden;
 
@@ -110,7 +130,7 @@ export default {
 
   .posts-list {
     grid-column: 1/5;
-    grid-row: 1/2;
+    grid-row: 2/11;
 
     overflow-y: scroll;
 
@@ -150,7 +170,7 @@ export default {
 
   .post-cover-background {
     grid-column: 5/13;
-    grid-row: 1/2;
+    grid-row: 2/11;
 
     background-color: #ffcc00;
   }
@@ -160,6 +180,11 @@ export default {
   .posts {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 10fr);
+
+    .marquee-work {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
 
     .posts-list {
       display: flex;
@@ -235,7 +260,7 @@ export default {
 
 .noise {
   grid-column: 5/13;
-  grid-row: 1/2;
+  grid-row: 2/11;
 
   width: 100%;
   height: 100%;
