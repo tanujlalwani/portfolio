@@ -13,12 +13,7 @@
       :src="getCoverVideo"
       type="video/webm"
     ></video>
-    <img
-      v-else
-      class="post-list-item-image size-fill-viewport"
-      :src="getCoverImage"
-      type="image/png"
-    />
+    <img v-else class="post-list-item-image" :src="getCoverImage" type="image/png" />
   </div>
 </template>
 

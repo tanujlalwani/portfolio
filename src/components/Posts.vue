@@ -1,9 +1,11 @@
 <template>
   <section class="posts size-fill-viewport" @mouseleave="updatePostView(null)">
-    <marquee-text class="marquee-work" :repeat="5" :duration="20" paused>
-      WORK
-      <span class="strikethrough">IN PROGRESS</span>&nbsp;•&nbsp;
-    </marquee-text>
+    <div class="marquee-wrapper">
+      <marquee-text class="marquee-work" :repeat="8" :duration="20" paused>
+        WORK
+        <span class="strikethrough">IN PROGRESS</span>&nbsp;•&nbsp;
+      </marquee-text>
+    </div>
     <div class="posts-list">
       <router-link
         class="posts-list-link"
@@ -100,15 +102,20 @@ export default {
 </script>
 
 <style lang="scss">
-.marquee-work {
+.marquee-wrapper {
   user-select: none;
-  font-size: 2rem;
-  background-color: #000;
-  color: #fff;
-  padding: 1rem 0;
-  grid-row: auto;
+  background-color: #fff;
 
+  padding: 1rem 0;
+  grid-row: 1/2;
   grid-column: 1/13;
+
+  border-bottom: 0.2rem solid #000;
+
+  .marquee-work {
+    color: #000;
+    font-size: 2rem;
+  }
 
   .strikethrough {
     text-decoration: underline;
@@ -141,12 +148,12 @@ export default {
       color: black;
 
       .posts-list-link-content {
-        padding: 2.5rem;
+        padding: 2rem;
         border-bottom: 0.2rem solid #000;
         font-variant-ligatures: contextual;
 
         .posts-list-item-title {
-          height: 1.8rem;
+          height: auto;
           font-size: 1.7rem;
           font-weight: bold;
           margin-bottom: 0.6rem;
@@ -166,6 +173,22 @@ export default {
         }
       }
     }
+
+    /* Custom Style Scrollbar */
+
+    &::-webkit-scrollbar {
+      width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ffcc00;
+      border-left: 0.2rem solid #000;
+      border-right: 0.2rem solid #000;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #000;
+    }
   }
 
   .post-cover-background {
@@ -174,98 +197,77 @@ export default {
 
     background-color: #ffcc00;
   }
+
+  .noise {
+    grid-column: 5/13;
+    grid-row: 2/11;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
 }
 
 @media only screen and (max-width: 800px) {
   .posts {
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: fit-content(20vh) 1fr fit-content(250vh);
+    grid-template-rows:
+      [marquee-start] fit-content(10vh)
+      [marquee-end view-start] 1fr [view-end list-start] fit-content(25vh)
+      [list-end];
 
     .marquee-work {
-      grid-column: 1/2;
-      grid-row: 1/2;
+      grid-column: span 1;
+      grid-row: marquee-start/marquee-end;
     }
 
     .posts-list {
-      display: flex;
-      flex-flow: row nowrap;
-
-      scroll-snap-type: x mandatory;
+      grid-column: span 1;
+      grid-row: list-start/list-end;
 
       width: 100vw;
 
-      grid-column: 1/2;
-      grid-row: 3/4;
+      display: flex;
+      flex-flow: row nowrap;
+      scroll-snap-type: x mandatory;
 
       overflow-y: hidden;
       overflow-x: scroll;
 
       .posts-list-link {
-        width: 100vw;
-        height: 100%;
-
         scroll-snap-align: start;
 
         .posts-list-link-content {
-          height: 100%;
           width: 100vw;
-
-          padding: 2rem;
           border: 0.2rem solid #000;
           border-left: 0px;
-          font-variant-ligatures: contextual;
 
           .posts-list-item-title {
-            height: 1.8rem;
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 0.6rem;
+            height: auto;
+            font-size: 2rem;
 
             .arrow {
               display: none;
-              letter-spacing: 0;
-              vertical-align: text-bottom;
-              padding-left: 0.25rem;
             }
+          }
+          .posts-list-item-tags {
+            font-size: 1.5rem;
           }
         }
       }
     }
 
-    .post-cover-background,
+    .post-cover-background {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+
     .noise {
       grid-column: 1/2;
       grid-row: 2/3;
     }
   }
-}
-
-.posts-list-link-content:hover {
-  background-color: #fff;
-
-  .posts-list-item-title,
-  .posts-list-item-tags {
-    color: #000;
-  }
-
-  .posts-list-item-title {
-    text-decoration: underline;
-
-    .arrow {
-      display: inline-block !important;
-      animation: slide-right 2s ease-in-out infinite alternate;
-    }
-  }
-}
-
-.noise {
-  grid-column: 5/13;
-  grid-row: 2/11;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
 }
 
 @keyframes slide-right {
@@ -277,21 +279,5 @@ export default {
     -webkit-transform: translateX(1rem);
     transform: translateX(1rem);
   }
-}
-
-.posts-list::-webkit-scrollbar {
-  width: 1rem;
-}
-
-/* Track */
-.posts-list::-webkit-scrollbar-track {
-  background: #ffcc00;
-  border-left: 0.2rem solid #000;
-  border-right: 0.2rem solid #000;
-}
-
-/* Handle */
-.posts-list::-webkit-scrollbar-thumb {
-  background: #000;
 }
 </style>
