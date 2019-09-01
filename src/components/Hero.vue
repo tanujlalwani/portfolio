@@ -2,7 +2,7 @@
   <section class="hero size-fill-viewport display-flex-column scroll-snap-start">
     <div class="hero-text user-select-none">
       They said give your website some personality.
-      <br />So he gave it
+      <br class="line-break" />So he gave it
       <span class="hero-text-italic">a</span> personality.
     </div>
   </section>
@@ -32,6 +32,20 @@ export default {};
     .hero-text-italic {
       font-weight: var(--font-weight-normal);
       font-style: italic;
+    }
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .line-break {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .hero {
+    .hero-text {
+      font-size: 1.8rem;
     }
   }
 }
