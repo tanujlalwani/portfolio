@@ -138,4 +138,16 @@ export default {
     letter-spacing: -0.4rem;
   }
 }
+
+@media only screen and (min-width: 350px) and (max-width: 550px) {
+  .about-text {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .about-text {
+    width: 83%;
+  }
+}
 </style>
