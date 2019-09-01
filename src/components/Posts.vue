@@ -176,7 +176,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .posts {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: fit-content(20vh) 1fr fit-content(250vh);
