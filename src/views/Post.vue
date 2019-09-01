@@ -8,10 +8,13 @@
 </template>
 
 <script>
-import { EventBus } from "../event-bus.js";
-
 import TOC from "@components/TOC.vue";
 import PostCover from "@components/PostCover.vue";
+
+import { EventBus } from "../event-bus.js";
+import showdown from "showdown";
+const converter = new showdown.Converter();
+converter.setFlavor("github");
 
 export default {
   name: "post",
@@ -28,7 +31,8 @@ export default {
   },
   props: ["post"],
   created() {
-    this.body = require("../assets/posts/" + this.title + "/post.md");
+    const markdown = require("../assets/posts/" + this.title + "/post.md");
+    this.body = converter.makeHtml(markdown.default);
   },
   mounted() {
     document.getElementById("cover").className += " full-cover";

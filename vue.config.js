@@ -1,5 +1,5 @@
-const marked = require('marked');
-const renderer = new marked.Renderer();
+// const marked = require('marked');
+// const renderer = new marked.Renderer();
 
 module.exports = {
   chainWebpack: config => {
@@ -24,20 +24,27 @@ module.exports = {
     // .loader('image-webpack-loader')
     // .end();
 
+    // config.module
+    //   .rule('md')
+    //   .test(/.md$/)
+    //   .use('html-loader')
+    //   .loader('html-loader')
+    //   .end()
+    //   .use('markdown-loader')
+    //   .loader('markdown-loader')
+    //   .options({
+    //     xhtml: true,
+    //     breaks: true,
+    //     renderer,
+    //     gfm: true
+    //   })
+    //   .end();
+
     config.module
       .rule('md')
       .test(/.md$/)
-      .use('html-loader')
-      .loader('html-loader')
-      .end()
-      .use('markdown-loader')
-      .loader('markdown-loader')
-      .options({
-        xhtml: true,
-        breaks: true,
-        renderer,
-        gfm: true
-      })
+      .use('raw-loader')
+      .loader('raw-loader')
       .end();
   }
 };
