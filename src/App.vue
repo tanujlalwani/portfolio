@@ -1,8 +1,6 @@
 <template>
   <div class="app size-fill-viewport">
-    <keep-alive include="home" exclude="post">
-      <router-view />
-    </keep-alive>
+    <router-view />
   </div>
 </template>
 

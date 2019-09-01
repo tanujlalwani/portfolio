@@ -1,6 +1,11 @@
 <template>
-  <section class="about size-fill-viewport scroll-snap-start">
-    <marquee-text class="marquee-about" :repeat="8" :duration="10">ARTIFICIAL TANGERINE&nbsp;•&nbsp;</marquee-text>
+  <section class="about size-fill-viewport display-flex-column scroll-snap-start">
+    <div class="marquee-wrapper" @mouseenter="marqueeToggle()" @mouseleave="marqueeToggle()">
+      <marquee-text class="marquee-about" :repeat="8" :duration="20">
+        ARTIFICIAL TANGERINE&nbsp;
+        <span :class="{tangerine: marqueePaused}">{{ tangerine }}</span>&nbsp;
+      </marquee-text>
+    </div>
     <div class="about-text-wrapper display-flex-column">
       <p
         class="about-text"
@@ -54,7 +59,8 @@ export default {
         " ",
         " at the intersection of technology and design. Over the last few years, these fields have been increasingly integrated. I intend to use my unique skillset to continue pushing the boundaries of the way we build and interact with the connected world around us in new and meaningful ways."
       ],
-      baffleObject: null
+      baffleObject: null,
+      marqueePaused: false
     };
   },
   methods: {
@@ -75,6 +81,9 @@ export default {
     technologistHoverOff: function() {
       this.technologistOn = false;
       this.baffleObject.reveal(500);
+    },
+    marqueeToggle() {
+      this.marqueePaused = !this.marqueePaused;
     }
   },
   mounted() {
@@ -82,6 +91,13 @@ export default {
       characters: "10",
       speed: 200
     });
+  },
+  computed: {
+    tangerine() {
+      if (!this.marqueePaused) {
+        return "  •  ";
+      } else return " 🍊 ";
+    }
   }
 };
 </script>
@@ -101,15 +117,26 @@ export default {
   cursor: default;
 }
 
+.marquee-wrapper {
+  width: 100vw;
+  height: 5vh;
+
+  position: relative;
+}
+
 .marquee-about {
   align-self: flex-start;
   user-select: none;
+  font-size: 2rem;
+
+  padding: 1rem 0;
 
   .marquee-text-wrap {
     padding: 0.5em 0 0.5em 0;
-    .marquee-text-text {
-      font-size: 1em;
-    }
+  }
+
+  .tangerine {
+    letter-spacing: -0.4rem;
   }
 }
 </style>

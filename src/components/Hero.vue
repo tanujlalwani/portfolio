@@ -17,6 +17,8 @@ export default {};
   background-color: var(--primary-color);
   justify-content: flex-start;
 
+  border: 0.3rem solid #fff;
+
   .hero-text {
     width: 80%;
     margin: 3em;
