@@ -156,6 +156,65 @@ export default {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .posts {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 10fr);
+
+    .posts-list {
+      display: flex;
+      flex-flow: row nowrap;
+
+      scroll-snap-type: x mandatory;
+
+      width: 100vw;
+
+      grid-column: 1/2;
+      grid-row: 9/11;
+
+      overflow-y: hidden;
+      overflow-x: scroll;
+
+      .posts-list-link {
+        width: 100vw;
+        height: 100%;
+
+        scroll-snap-align: start;
+
+        .posts-list-link-content {
+          height: 100%;
+          width: 100vw;
+
+          padding: 2rem;
+          border: 0.2rem solid #000;
+          border-left: 0px;
+          font-variant-ligatures: contextual;
+
+          .posts-list-item-title {
+            height: 1.8rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.6rem;
+
+            .arrow {
+              display: none;
+              letter-spacing: 0;
+              vertical-align: text-bottom;
+              padding-left: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+
+    .post-cover-background,
+    .noise {
+      grid-column: 1/2;
+      grid-row: 1/9;
+    }
+  }
+}
+
 .posts-list-link-content:hover {
   background-color: #fff;
 
