@@ -9,6 +9,16 @@ module.exports = {
       .set('@scss', '@/assets/scss');
 
     config.module
+      .rule('md')
+      .test(/.md$/)
+      .use('html-loader')
+      .loader('html-loader')
+      .end()
+      .use('showdown-markdown-loader')
+      .loader('showdown-markdown-loader')
+      .end();
+
+    config.module
       .rule('image')
       .test(/.(png | jpe?g | gif | svg)$/)
       .use('file-loader')
@@ -20,12 +30,5 @@ module.exports = {
     // .use('image-loader')
     // .loader('image-webpack-loader')
     // .end();
-
-    config.module
-      .rule('md')
-      .test(/.md$/)
-      .use('raw-loader')
-      .loader('raw-loader')
-      .end();
   }
 };

@@ -3,7 +3,9 @@
     <toc></toc>
     <post-cover class="post-header" id="cover" v-bind:post="post"></post-cover>
     <hr class="cover-divider" />
-    <article class="post size-fill-viewport js-toc-content" v-html="body"></article>
+    <article class="post size-fill-viewport js-toc-content">
+      <div class="post-body" v-html="body"></div>
+    </article>
   </div>
 </template>
 
@@ -12,9 +14,6 @@ import TOC from "@components/TOC.vue";
 import PostCover from "@components/PostCover.vue";
 
 import { EventBus } from "../event-bus.js";
-import showdown from "showdown";
-const converter = new showdown.Converter();
-converter.setFlavor("github");
 
 export default {
   name: "post",
@@ -31,8 +30,7 @@ export default {
   },
   props: ["post"],
   created() {
-    const markdown = require("../assets/posts/" + this.title + "/post.md");
-    this.body = converter.makeHtml(markdown.default);
+    this.body = require("../assets/posts/" + this.title + "/post.md");
   },
   mounted() {
     document.getElementById("cover").className += " full-cover";

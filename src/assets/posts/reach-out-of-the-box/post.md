@@ -1,7 +1,3 @@
-<div class="post-body">
-
-## Introduction
-
 <p class="introduction">Reach Out of the Box was an unique fundraising event hosted by Mallya Aditi International in collaboration with HelpAge India. The event was centered around a carnival followed by a live concert featuring 5 of India's largest bands. All proceeds from the event went to the victims of the Uttarakhand flood in India.</p>
 
 ---
@@ -10,10 +6,8 @@
 
 The event was a nigh-time carnival followed by a concert. This evoked an atmosphere of bright lights, good music, popcorn + cotton candy, and great deal of fun!
 
-<div class="image image-width-full">
-
-![Reach Out of the Box: Moodboard](1.png 'ReachOut: Moodboard')
-
+<div markdown class="image image-width-full">
+  ![Reach Out of the Box: Moodboard](1.png 'ReachOut: Moodboard')
 </div>
 
 ---
@@ -26,11 +20,9 @@ Various iterations of the logo were created, ranging in use color, form and typo
 
 These characteristics carried over to the final logo: the words Reach Out of the Box forming a perspective box shape with bright, colored beams of light pouring out of the 'box'. These beams of light emulated the lights at the concert and also symbolized the charitable and all-embracing nature of the event. The logo was made dynamic too, with the color of the light beams changing with respect to context, and in turn, making the logo more memorable.
 
-<div class="image image-width-body image-group-vertical">
-
-![Reach Out of the Box: Final Logo](2.png 'ReachOut: Final Logo')
-![Reach Out of the Box: Logo Process](3.png 'Reach Out of the Box: Logo Process')
-
+<div markdown class="image image-width-body image-group-vertical">
+  ![Reach Out of the Box: Final Logo](2.png 'ReachOut: Final Logo')
+  ![Reach Out of the Box: Logo Process](3.png 'Reach Out of the Box: Logo Process')
 </div>
 
 ---
@@ -41,10 +33,8 @@ The design for the tickets was kept minimal, especially with respect to the amou
 
 Having a cleaner design increased the amount of real-estate on the ticket. This informed the decision to create a vertical ticket which allowed for the logo to be displayed in all its glory, making it more of a souvenir. Additionally, The dynamic identity was enforced to create variants for the various levels of tickets that could be purchased.
 
-<div class="image image-width-body">
-
-![Reach Out of the Box: Tickets](4.png 'Reach Out of the Box: Tickets')
-
+<div markdown class="image image-width-body">
+  ![Reach Out of the Box: Tickets](4.png 'Reach Out of the Box: Tickets')
 </div>
 
 ---
@@ -53,11 +43,9 @@ Having a cleaner design increased the amount of real-estate on the ticket. This 
 
 The posters were created in the same vein as the tickets, with a stark focus on the logo and the beams of light. This focus was intended to differentiate the poster from the background which would help in making it seem as though the beams of light were bursting through the poster and into the world, spreading joy and happiness.
 
-<div class="image image-width-full image-group-horizontal">
-
-![Reach Out of the Box: Poster 1](5.png 'ReachOut: Poster 1')
-![Reach Out of the Box: Poster 2](6.png 'ReachOut: Poster 2')
-
+<div markdown class="image image-width-full image-group-horizontal">
+  ![Reach Out of the Box: Poster 1](5.png 'ReachOut: Poster 1')
+  ![Reach Out of the Box: Poster 2](6.png 'ReachOut: Poster 2')
 </div>
 
 ---
@@ -66,12 +54,8 @@ The posters were created in the same vein as the tickets, with a stark focus on 
 
 The visual identity created for the event was applied to tickets, badges, t-shirst, social media pages and merchandise. While designing these items, the identity was completely embraced and let to it being incorporated in unique ways: the lanyards of the badges were designed to look like an extension of the light beams, while the t-shirts were designed to have the beams wrap around the back, creating a sleek, symmetrical design.
 
-<div class="image image-width-full">
-
-![Reach Out of the Box: SWAG](7.png 'ReachOut: Logo Process')
-
+<div markdown class="image image-width-full">
+  ![Reach Out of the Box: SWAG](7.png 'ReachOut: Logo Process')
 </div>
 
 <div class="post-footer"></div>
-
-</div>
