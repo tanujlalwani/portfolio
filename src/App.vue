@@ -9,12 +9,19 @@
 </template>
 
 <script>
+import { EventBus } from "./event-bus.js";
+
 export default {
   data() {
     return {
       postTitle: "tangerine v0.1",
       postOpen: false
     };
+  },
+  created() {
+    EventBus.$on("post-opened", title => {
+      this.postOpen = true;
+    });
   },
   watch: {
     $route(to, from) {
