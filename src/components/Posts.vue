@@ -6,6 +6,11 @@
         <span class="strikethrough">IN PROGRESS</span>&nbsp;•&nbsp;
       </marquee-text>
     </div>
+    <div
+      v-if="!isMobile"
+      class="intructions"
+    >&darr; &darr; &darr; Hover over link to preview project. Click to view project. &darr; &darr; &darr;</div>
+    <div v-else class="intructions">&darr; Scroll to explore. Tap to view. &darr;</div>
     <div class="posts-list">
       <router-link
         class="posts-list-link"
@@ -19,7 +24,7 @@
         <div class="posts-list-link-content" @mouseover="updatePostView(post)">
           <h1 class="posts-list-item-title">
             {{post.title}}
-            <span class="arrow">-></span>
+            <span class="arrow">&rarr;</span>
           </h1>
           <span class="posts-list-item-tags">{{ stringifyPostTags(post.tags) }}</span>
         </div>
@@ -61,7 +66,8 @@ export default {
       posts: Posts.posts,
       currentPost: null,
       noiseSrc: null,
-      showNoise: false
+      showNoise: false,
+      windowWidth: window.innerWidth
       // clicks: 0
       // audioObj: null
     };
@@ -85,10 +91,10 @@ export default {
         }, 600);
       }
     },
-    getNoiseSrc(path) {
+    getNoiseSrc() {
       return require("../assets/noise.mp4");
     }
-  }
+  },
   // computed: {
   //   clickSrc(path) {
   //     return require("../assets/sounds/click_" + this.clicks + ".mp3");
@@ -98,46 +104,71 @@ export default {
   //   this.audioObj = document.getElementById("click");
   //   this.audioObj.volume = 0.5;
   // }
+  mounted() {
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+    });
+  },
+  computed: {
+    isMobile() {
+      return this.windowWidth <= 800;
+    }
+  }
 };
 </script>
 
 <style lang="scss">
-.marquee-wrapper {
-  user-select: none;
-  background-color: #fff;
-
-  padding: 1rem 0;
-  grid-row: 1/2;
-  grid-column: 1/13;
-
-  border-bottom: 0.2rem solid #000;
-
-  .marquee-work {
-    color: #000;
-    font-size: 2rem;
-  }
-
-  .strikethrough {
-    text-decoration: underline;
-    text-decoration-line: line-through;
-  }
-}
-
 .posts {
   width: 100vw;
   height: 100vh;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: fit-content(10rem) repeat(9, 1fr);
+  grid-template-rows: fit-content(10rem) fit-content(1rem) repeat(9, 1fr);
 
   overflow: hidden;
 
   border: 0.2rem solid #000;
 
+  .marquee-wrapper {
+    user-select: none;
+    background-color: #fff;
+
+    padding: 1rem 0;
+    grid-row: 1/2;
+    grid-column: 1/13;
+
+    border-bottom: 0.2rem solid #000;
+
+    .marquee-work {
+      color: #000;
+      font-size: 2rem;
+    }
+
+    .strikethrough {
+      text-decoration: underline;
+      text-decoration-line: line-through;
+    }
+  }
+
+  .intructions {
+    grid-row: 2 / 3;
+    grid-column: 1/13;
+
+    padding: 0.5rem 0;
+
+    background-color: #000;
+    color: #fff;
+
+    font-size: 1.2rem;
+    word-spacing: 0.1rem;
+
+    text-align: center;
+  }
+
   .posts-list {
     grid-column: 1/5;
-    grid-row: 2/11;
+    grid-row: 3/12;
 
     overflow-y: scroll;
 
@@ -161,7 +192,6 @@ export default {
           .arrow {
             display: none;
             letter-spacing: 0;
-            vertical-align: text-bottom;
             padding-left: 0.25rem;
           }
         }
@@ -169,7 +199,26 @@ export default {
         .posts-list-item-tags {
           font-size: 1rem;
           font-style: italic;
-          // font-weight: bold;
+        }
+      }
+
+      &:hover {
+        .posts-list-link-content:hover {
+          background-color: #fff;
+
+          .posts-list-item-title,
+          .posts-list-item-tags {
+            color: #000;
+          }
+
+          .posts-list-item-title {
+            // text-decoration: underline;
+
+            .arrow {
+              display: inline-block !important;
+              animation: slide-right 2s ease-in-out infinite alternate;
+            }
+          }
         }
       }
     }
@@ -193,14 +242,14 @@ export default {
 
   .post-cover-background {
     grid-column: 5/13;
-    grid-row: 2/11;
+    grid-row: 3/12;
 
     background-color: #ffcc00;
   }
 
   .noise {
     grid-column: 5/13;
-    grid-row: 2/11;
+    grid-row: 3/12;
 
     width: 100%;
     height: 100%;
@@ -214,12 +263,23 @@ export default {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows:
       [marquee-start] fit-content(10vh)
-      [marquee-end view-start] 1fr [view-end list-start] fit-content(25vh)
+      [marquee-end view-start] 1fr [view-end instructions-start] fit-content(
+        1rem
+      )
+      [instructions-end list-start] fit-content(25vh)
       [list-end];
 
     .marquee-work {
       grid-column: span 1;
       grid-row: marquee-start/marquee-end;
+    }
+
+    .intructions {
+      grid-column: span 1;
+      grid-row: instructions-start/instructions-end;
+
+      padding: 0.5rem 0;
+      word-spacing: 0.1rem;
     }
 
     .posts-list {
