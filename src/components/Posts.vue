@@ -22,7 +22,21 @@
       }"
       >
         <div class="posts-list-link-content" @mouseover="updatePostView(post)">
-          <h1 class="posts-list-item-title">
+          <h1
+            v-if="isMobile"
+            class="posts-list-item-title"
+            v-observe-visibility="{
+            callback: (isVisible, entry) => visibilityChanged(isVisible, entry, post),
+            intersection: {
+              threshold: 0.9,
+              throttle: 300,
+            },
+          }"
+          >
+            {{post.title}}
+            <span class="arrow">&rarr;</span>
+          </h1>
+          <h1 v-else class="posts-list-item-title">
             {{post.title}}
             <span class="arrow">&rarr;</span>
           </h1>
@@ -93,6 +107,12 @@ export default {
     },
     getNoiseSrc() {
       return require("../assets/noise.mp4");
+    },
+    visibilityChanged(isVisible, entry, post) {
+      console.log(entry);
+      if (isVisible) {
+        this.updatePostView(post);
+      }
     }
   },
   // computed: {

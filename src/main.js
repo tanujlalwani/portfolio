@@ -5,6 +5,9 @@ import router from './router';
 import MarqueeText from 'vue-marquee-text-component';
 Vue.component('marquee-text', MarqueeText);
 
+import VueObserveVisibility from 'vue-observe-visibility';
+Vue.use(VueObserveVisibility);
+
 Vue.config.productionTip = false;
 
 new Vue({
