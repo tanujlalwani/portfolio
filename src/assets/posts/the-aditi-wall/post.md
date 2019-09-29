@@ -93,7 +93,7 @@ The mood boards and wireframes were used as the basis for the creation of the st
 
 One of the goals while designing prototypes was to give the reader as simple as an experience possible - every interaction had to be essential to enhancing the reader's experience. This resulted in the creation of the four key interactions seen below. Each interaction is as smooth as possible to prevent the reader's pulling the reader out of their flow. These interactions aim to replicate the physcial act of browsing a magazine.
 
-<div markdown class="video video-width-body">
+<div markdown class="video video-width-body video-height-medium">
   vimeo[The Aditi Wall: Prototype](https://player.vimeo.com/video/357266489)
 </div>
 

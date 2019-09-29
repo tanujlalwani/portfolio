@@ -217,7 +217,8 @@ export default {
   }
 }
 
-.image {
+.image,
+.video {
   margin-top: 6rem;
 
   p {
@@ -228,6 +229,10 @@ export default {
     img {
       width: 100%;
     }
+  }
+
+  iframe {
+    width: 100%;
   }
 }
 
@@ -245,16 +250,34 @@ export default {
   margin: 3rem auto 1rem auto;
 }
 
+.video-width-text {
+  grid-column: text-start/text-end;
+}
+
+.video-width-body,
 .image-width-body {
   grid-column: body-start/body-end;
 }
 
+.video-width-full,
 .image-width-full {
   grid-column: page-start/page-end;
 }
 
 .image-inline {
   margin: 3rem auto 2rem auto;
+}
+
+.video-height-small iframe {
+  height: 40vh;
+}
+
+.video-height-medium iframe {
+  height: 60vh;
+}
+
+.video-height-large iframe {
+  height: 80vh;
 }
 
 // Image Group Type
@@ -327,10 +350,12 @@ export default {
       [page-end];
   }
 
+  .video-width-body,
   .image-width-body {
     grid-column: page-start/page-end;
   }
 
+  .video-width-text,
   .image-width-text {
     grid-column: body-start/body-end;
     margin-bottom: 0;
@@ -357,6 +382,7 @@ export default {
       [page-end];
   }
 
+  .video-width-body,
   .image-width-body {
     grid-column: page-start/page-end;
 
@@ -367,6 +393,7 @@ export default {
     }
   }
 
+  .video-width-text,
   .image-width-text {
     grid-column: body-start/body-end;
     margin-bottom: 0;
@@ -419,9 +446,10 @@ export default {
       margin: 3rem 0;
     }
 
+    .video-width-text,
     .image-width-text {
       grid-column: page-start/page-end;
-      margin: 1rem auto;
+      margin: 1rem 0;
 
       .image-width-text.image-rounded {
         img {
@@ -430,6 +458,7 @@ export default {
       }
     }
 
+    .video-width-body,
     .image-width-body {
       grid-column: page-start/page-end;
       margin: 2rem 0;
@@ -441,6 +470,7 @@ export default {
       }
     }
 
+    .video-width-full,
     .image-width-full {
       margin: 2rem auto 0 auto;
     }
