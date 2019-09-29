@@ -5,6 +5,7 @@
     <router-link to="/" class="nav-link">
       <span class="nav-link-button user-select-none" :class="{'hud-post': postOpen}"></span>
     </router-link>
+    <div class="overlay"></div>
   </div>
 </template>
 
@@ -56,12 +57,13 @@ export default {
 
   --accent-color: #05f;
 
+  --font-color-default: #000;
+  --font-color-light: #666;
+
   --font-family: "Space Mono", monospace;
   --font-style-default: normal;
   --font-weight-normal: 400;
   --font-weight-bold: 800;
-  --font-color-default: #000;
-  --font-color-light: #666;
 
   --font-line-height-default: 1.3;
   --font-letter-spacing-default: -0.003rem;
@@ -287,5 +289,15 @@ body,
       display: none;
     }
   }
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  bottom: -100vh;
+
+  background: #ff9900;
 }
 </style>

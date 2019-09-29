@@ -10,9 +10,7 @@ Vue.use(Router);
 export default new Router({
   mode: 'history',
   scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
-      return { selector: to.hash };
-    } else if (savedPosition) {
+    if (savedPosition) {
       return savedPosition;
     } else {
       return { x: 0, y: 0 };
@@ -22,11 +20,13 @@ export default new Router({
     {
       path: '/',
       name: 'home',
+      meta: { index: 0 },
       component: Home
     },
     {
       path: '/post/:title',
       name: 'post',
+      meta: { index: 1 },
       component: Post,
       props: route => ({
         post: Posts.posts.filter(post => route.params.title == post.path)[0]

@@ -6,7 +6,7 @@
       "path": "the-aditi-wall",
       "tags": ["web", "identity"],
       "coverVideo": false,
-      "theme": "black"
+      "theme": "white"
     },
     {
       "id": "1",
@@ -14,7 +14,7 @@
       "path": "reach-out-of-the-box",
       "tags": ["identity", "print"],
       "coverVideo": true,
-      "theme": "black"
+      "theme": "white"
     },
     {
       "id": "2",

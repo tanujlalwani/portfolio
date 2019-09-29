@@ -1,5 +1,5 @@
 <template>
-  <div class="post">
+  <div class="post" :theme="theme">
     <toc></toc>
     <post-cover class="post-header" id="cover" v-bind:post="post"></post-cover>
     <hr class="cover-divider" />
@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       title: this.post.path,
+      theme: this.post.theme,
       body: null,
       tocVisible: false
     };
@@ -40,6 +41,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../styles/post-themes.scss";
+
 // Post Component: Layout
 .post {
   overflow-y: scroll;
@@ -75,7 +78,11 @@ export default {
   border: none;
 
   // using background-image gradient to create a customizable dashed border
-  background-image: linear-gradient(to right, #fff 45%, rgba(0, 0, 0, 0) 0%);
+  background-image: linear-gradient(
+    to right,
+    var(--background-color) 45%,
+    rgba(0, 0, 0, 0) 0%
+  );
   background-position: bottom;
   background-size: var(--divider-dash-width) var(--divider-dash-height);
   background-repeat: repeat-x;
@@ -83,7 +90,7 @@ export default {
 
 /* Post Body - CSS Grid Layout */
 .post {
-  background-color: white;
+  background-color: var(--background-color);
 }
 
 .post-body {
@@ -104,6 +111,18 @@ export default {
     [body-end]
     minmax(0px, 3fr)
     [page-end];
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  li {
+    color: var(--text-color);
+  }
 
   h1,
   h2,
@@ -175,7 +194,7 @@ export default {
   }
 
   h4 {
-    color: var(--font-color-light);
+    color: var(--text-color-light);
     font-size: 0.9rem;
   }
 
@@ -194,7 +213,7 @@ export default {
   }
 
   .introduction {
-    color: #05f;
+    color: var(--introduction-color);
 
     font-size: 1.4rem;
     font-weight: var(--font-weight-bold);
@@ -212,8 +231,11 @@ export default {
     border: none;
 
     // using background-image gradient to create a customizable dashed border
-    opacity: 0.15;
-    background-image: linear-gradient(to right, #000 35%, #fff 0%);
+    background-image: linear-gradient(
+      to right,
+      var(--divider-color) 35%,
+      rgba(0, 0, 0, 0) 0%
+    );
     background-position: bottom;
     background-size: 2rem 0.11rem;
     background-repeat: repeat-x;
@@ -241,7 +263,7 @@ export default {
 
 .image-caption {
   font-size: 0.9rem;
-  color: var(--font-color-light);
+  color: var(--text-color-light);
 
   text-align: center;
 }
