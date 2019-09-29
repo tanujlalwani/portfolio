@@ -13,8 +13,6 @@
 import TOC from "@components/TOC.vue";
 import PostCover from "@components/PostCover.vue";
 
-import { EventBus } from "../event-bus.js";
-
 export default {
   name: "post",
   components: {
@@ -34,7 +32,6 @@ export default {
   },
   mounted() {
     document.getElementById("cover").className += " full-cover";
-    EventBus.$emit("post-opened");
   }
 };
 </script>

@@ -1,29 +1,26 @@
 <template>
   <div class="app size-fill-viewport">
     <router-view />
-    <span class="section user-select-none" @click="emitClickEvent()">{{ postTitle }}</span>
-    <span class="nav user-select-none" @click="emitClickEvent()"></span>
+    <span class="nav-path user-select-none" :class="{'hud-post': postOpen}">{{ postTitle }}</span>
+    <router-link to="/" class="nav-link">
+      <span class="nav-link-button user-select-none" :class="{'hud-post': postOpen}"></span>
+    </router-link>
   </div>
 </template>
 
 <script>
-import { EventBus } from "./event-bus.js";
-
 export default {
   data() {
     return {
-      postTitle: "tangerine v0.1"
+      postTitle: "tangerine v0.1",
+      postOpen: false
     };
   },
-  methods: {
-    emitClickEvent() {
-      EventBus.$emit("nav-clicked");
+  watch: {
+    $route(to, from) {
+      if (to.name == "home") this.postOpen = false;
+      else if (to.name == "post") this.postOpen = true;
     }
-  },
-  created() {
-    EventBus.$on("post-item-visible", title => {
-      this.postTitle = title;
-    });
   }
 };
 </script>
@@ -131,7 +128,7 @@ body,
   height: 100vh;
 }
 
-.section {
+.nav-path {
   position: fixed;
   bottom: 0;
   right: 4rem;
@@ -148,7 +145,11 @@ body,
   z-index: 1000 !important;
 }
 
-.nav {
+.hud-post {
+  color: #999;
+}
+
+.nav-link-button {
   width: 2rem;
   height: 2rem;
 
@@ -167,6 +168,25 @@ body,
 
   &:hover {
     background-color: #222;
+  }
+
+  cursor: pointer;
+}
+
+.nav-link:visited .nav-link-button {
+  border: 0.2rem solid #222;
+
+  &:hover {
+    background-color: #222;
+  }
+}
+
+.nav-link .hud-post,
+.nav-link:visited .hud-post {
+  border-color: #999;
+
+  &:hover {
+    background-color: #999;
   }
 }
 
@@ -254,10 +274,9 @@ body,
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
   :root {
-    .nav,
-    .section {
+    .nav-path {
       display: none;
     }
   }
