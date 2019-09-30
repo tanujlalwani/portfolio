@@ -12,7 +12,6 @@
     "baffle": "^0.3.6",
     "core-js": "^2.6.5",
     "sass-loader": "^7.2.0",
-    "tocbot": "^4.7.1",
     "typeit": "^6.0.3",
     "vue-marquee-text-component": "^1.1.1",
     "vue-observe-visibility": "^0.4.4",
@@ -29,7 +28,6 @@
     "html-loader": "^0.5.5",
     "image-webpack-loader": "^5.0.0",
     "node-sass": "^4.12.0",
-    "raw-loader": "^3.1.0",
     "showdown-markdown-loader": "^1.2.0",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10"

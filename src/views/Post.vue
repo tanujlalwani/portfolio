@@ -1,16 +1,14 @@
 <template>
   <div class="post" :theme="theme">
-    <toc></toc>
     <post-cover class="post-header" id="cover" v-bind:post="post"></post-cover>
     <hr class="cover-divider" />
-    <article class="post size-fill-viewport js-toc-content">
+    <article class="post size-fill-viewport">
       <div class="post-body" v-html="body"></div>
     </article>
   </div>
 </template>
 
 <script>
-import TOC from "@components/TOC.vue";
 import PostCover from "@components/PostCover.vue";
 
 import { EventBus } from "../event-bus.js";
@@ -18,15 +16,13 @@ import { EventBus } from "../event-bus.js";
 export default {
   name: "post",
   components: {
-    toc: TOC,
     PostCover
   },
   data() {
     return {
       title: this.post.path,
       theme: this.post.theme,
-      body: null,
-      tocVisible: false
+      body: null
     };
   },
   props: ["post"],
