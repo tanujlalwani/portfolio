@@ -12,56 +12,56 @@ An excellent resource for gaining a deeper understanding of linear algebra is th
 ---
 
 <div markdown class="video video-width-body video-height-large">
-  vimeo[Binary: 1](https://player.vimeo.com/video/357264142)
+  <iframe src="https://player.vimeo.com/video/357264142" frameborder="0" allow="autoplay"></iframe>
 </div>
 <p class="image-caption">A • [ 1, 0, 1, 0, 1] = 0<p>
 
 ---
 
 <div markdown class="video video-width-body video-height-large">
-  vimeo[Binary: 2](https://player.vimeo.com/video/357263975)
+  <iframe src="https://player.vimeo.com/video/357263975" frameborder="0" allow="autoplay"></iframe>
 </div>
 <p class="image-caption">V = { 1, 0 , 1, 1, ... , 0, 1 }<p>
 
 ---
 
 <div markdown class="video video-width-body video-height-large">
-  vimeo[Binary: 3](https://player.vimeo.com/video/357264113)
+  <iframe src="https://player.vimeo.com/video/357264113" frameborder="0" allow="autoplay"></iframe>
 </div>
 <p class="image-caption">Dim(X) = 3<p>
 
 ---
 
 <div markdown class="video video-width-body video-height-large">
-  vimeo[Binary: 4](https://player.vimeo.com/video/357264153)
+  <iframe src="https://player.vimeo.com/video/357264153" frameborder="0" allow="autoplay"></iframe>
 </div>
 <p class="image-caption">sin(X)<p>
 
 ---
 
 <div markdown class="video video-width-body video-height-large">
-  vimeo[Binary: 5](https://player.vimeo.com/video/357264196)
+  <iframe src="https://player.vimeo.com/video/357264196" frameborder="0" allow="autoplay"></iframe>
 </div>
 <p class="image-caption">proj(X)<p>
 
 ---
 
 <div markdown class="video video-width-body video-height-large">
-  vimeo[Binary: 6](https://player.vimeo.com/video/357263994)
+  <iframe src="https://player.vimeo.com/video/357263994" frameborder="0" allow="autoplay"></iframe>
 </div>
 <p class="image-caption">Y • Z<p>
 
 ---
 
 <div markdown class="video video-width-body video-height-large">
-  vimeo[Binary: 7](https://player.vimeo.com/video/357264169)
+  <iframe src="https://player.vimeo.com/video/357264169" frameborder="0" allow="autoplay"></iframe>
 </div>
 <p class="image-caption">7mW*7lnZd6<p>
 
 ---
 
 <div markdown class="video video-width-body video-height-large">
-  vimeo[Binary: 8](https://player.vimeo.com/video/357264484)
+  <iframe src="https://player.vimeo.com/video/357264484" frameborder="0" allow="autoplay"></iframe>
 </div>
 <p class="image-caption">. . .<p>
 
