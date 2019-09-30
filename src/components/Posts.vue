@@ -109,7 +109,6 @@ export default {
       return require("../assets/noise.mp4");
     },
     visibilityChanged(isVisible, entry, post) {
-      console.log(entry);
       if (isVisible) {
         this.updatePostView(post);
       }
