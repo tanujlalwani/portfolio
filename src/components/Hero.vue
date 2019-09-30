@@ -21,59 +21,49 @@ export default {
   data() {
     return {
       instructionsText: false,
-      audioObj: null
+      audioObj: null,
+      moodLighting: false,
+      seenTangerine: false
     };
   },
   mounted() {
     this.audioObj = document.getElementById("jazz");
-    const instance = new TypeIt("#tangerine")
+
+    new TypeIt("#tangerine")
       .options({
-        html: true,
-        speed: 0,
-        waitUntilVisible: true
+        speed: 50,
+        html: true
       })
+      .type(`Heyya! I'm Tangerine 🍊 and I'm a bot 🤖.`)
+      .pause(1000)
+      .delete(8)
+      .type(`n <i>unfinished</i> bot 🤖.`)
       .type(
-        `They said give your website some personality.
-          <br/>
-          So he gave it <i>a</i> personality. He made me.
-          <br/><br/>
-          Hi! I'm Tangerine. Nice to meet you :)`
+        `
+          <br/><br/>Well, this is embarassing`
       )
-      .exec(async () => {
-        this.instructionsText = "Press any key to continue";
-        await new Promise((resolve, reject) => {
-          document.onkeypress = function(evt) {
-            evt = evt || window.event;
-            var charCode = evt.keyCode || evt.which;
-            var charStr = String.fromCharCode(charCode);
-            resolve();
-          };
-        });
-        this.instructionsText = null;
-      })
-      .empty()
+      .pause(400)
+      .type(`.`)
+      .pause(400)
+      .type(`.`)
+      .pause(400)
+      .type(`.`)
+      .pause(400)
       .type(
-        `I wasn't expecting anyone to come around today!
-        <br/>I'll just get everything set up.
-        <br/>Make yourself comfortable, have a cookies or something?`
+        `<br/><br/>Someday my creator will finish building me
+        <br/>(no, he's not just lazy, <i>you're</i> lazy)
+          <br/>Till then, I'm just a bunch of sarcastic code named after a fruit.
+          <br/><br/>Anyway, use your free will!
+          <br/>Go on and explore the wonders that lie below.
+          <br/><br/>I'll just munch on your cookies
+          <br/>(jk I'm not Facebook)
+          <br/>and listen to some smooooooooth jazz.`
       )
-      .type(
-        `How about some music?
-        <br/>People with a great taste in music are supposed to personable, right?`
-      )
-      .exec(async () => {
-        this.instructionsText = "Y/N";
-        await new Promise((resolve, reject) => {
-          document.onkeypress = function(evt) {
-            evt = evt || window.event;
-            var charCode = evt.keyCode || evt.which;
-            var charStr = String.fromCharCode(charCode);
-            resolve();
-          };
-        });
-        this.audioObj.play();
+      .exec(() => {
+        this.instructionsText = "↓ ↓ ↓";
       })
       .go();
+    // this.audioObj.play();
   }
 };
 </script>
@@ -90,6 +80,8 @@ export default {
 
   border: 0.3rem solid #fff;
 
+  // cursor: url(../assets/icons/circle.png) 10 10, auto;
+
   .hero-text {
     width: 80%;
     margin: 0 10%;
@@ -98,11 +90,13 @@ export default {
 
     grid-row: 2/9;
 
-    font-size: 2.1rem;
+    font-size: 1.5rem;
     font-weight: var(--font-weight-bold);
     color: var(--primary-color-text);
 
-    line-height: 1.3em;
+    line-height: 1.5em;
+
+    // cursor: url(../assets/icons/circle.png) 10 10, auto;
 
     i {
       font-weight: var(--font-weight-normal);
