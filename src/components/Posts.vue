@@ -1,7 +1,7 @@
 <template>
   <section class="posts size-fill-viewport" @mouseleave="updatePostView(null)">
-    <div class="marquee-wrapper">
-      <marquee-text class="marquee-work" :repeat="8" :duration="20" paused>
+    <div class="marquee-wrapper" @click="workMarqueePaused = !workMarqueePaused">
+      <marquee-text class="marquee-work" :repeat="8" :duration="20" :paused="workMarqueePaused">
         WORK
         <span class="strikethrough">IN PROGRESS</span>&nbsp;•&nbsp;
       </marquee-text>
@@ -81,7 +81,8 @@ export default {
       currentPost: null,
       noiseSrc: null,
       showNoise: false,
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      workMarqueePaused: true
       // clicks: 0
       // audioObj: null
     };
@@ -159,6 +160,8 @@ export default {
 
     border-bottom: 0.2rem solid #000;
 
+    cursor: url(../assets/icons/warning.png) 25 25, auto;
+
     .marquee-work {
       color: #000;
       font-size: 2rem;
@@ -196,6 +199,9 @@ export default {
     .posts-list-link {
       text-decoration: none;
       color: black;
+
+      // cursor: url("data:image/svg+xml,%3Csvg width='26.8' height='20' viewBox='0 0 54 40.2' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='svgGroup' stroke-linecap='round' fill-rule='evenodd' font-size='9pt' stroke='%23000' stroke-width='0.25mm' fill='%23000' style='stroke:%23000;stroke-width:0.25mm;fill:%23000'%3E%3Cpath d='M 54 24.9 L 38.7 40.2 L 33.6 35.1 L 42.4 26.3 L 47.4 23.5 L 46.9 22.3 L 42.4 23.7 L 0 23.7 L 0 16.5 L 42.4 16.5 L 46.9 17.9 L 47.4 16.7 L 42.4 13.9 L 33.6 5.1 L 38.7 0 L 54 15.3 L 54 24.9 Z' vector-effect='non-scaling-stroke'/%3E%3C/g%3E%3C/svg%3E"),
+      //   auto;
 
       .posts-list-link-content {
         padding: 2rem;
