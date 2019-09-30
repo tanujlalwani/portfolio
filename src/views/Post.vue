@@ -162,7 +162,7 @@ export default {
   }
 
   .post-footer {
-    margin: 6rem auto;
+    margin: 4rem auto;
   }
 }
 

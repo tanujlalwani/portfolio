@@ -64,3 +64,5 @@ An excellent resource for gaining a deeper understanding of linear algebra is th
   vimeo[Binary: 8](https://player.vimeo.com/video/357264484)
 </div>
 <p class="image-caption">. . .<p>
+
+<div class="post-footer"></div>
