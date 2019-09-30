@@ -17,7 +17,7 @@ module.exports = {
       .use('showdown-markdown-loader')
       .loader('showdown-markdown-loader')
       .options({
-        extensions: ['vimeo']
+        extensions: ['video']
       })
       .end();
 
