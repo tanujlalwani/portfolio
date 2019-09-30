@@ -298,7 +298,7 @@ export default {
 }
 
 .video-height-large iframe {
-  height: 80vh;
+  height: 85vh;
 }
 
 // Image Group Type
