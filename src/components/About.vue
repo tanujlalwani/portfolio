@@ -44,6 +44,7 @@ import baffle from "baffle";
 export default {
   data() {
     return {
+      arttan: true,
       creativeOn: false,
       creativeDone: false,
       technologistOn: false,
@@ -96,7 +97,11 @@ export default {
     tangerine() {
       if (!this.marqueePaused) {
         return "  •  ";
-      } else return " 🍊 ";
+      } else {
+        this.arttan = !this.arttan;
+        if (this.arttan) return " 🍊 ";
+        else return " 🤖 ";
+      }
     }
   }
 };
