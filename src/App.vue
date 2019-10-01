@@ -1,28 +1,66 @@
 <template>
-  <div class="app size-fill-viewport">
+  <div class="app size-fill-viewport" :class="{ 'overflow-hidden': overflowHidden }">
     <router-view />
     <span class="nav-path user-select-none" :class="{'hud-post': postOpen}">{{ postTitle }}</span>
-    <router-link to="/" class="nav-link">
-      <span class="nav-link-button user-select-none" :class="{'hud-post': postOpen}"></span>
-    </router-link>
+    <!-- <router-link to="/" class="nav-link"> -->
+    <span
+      id="jazz-toggle"
+      class="nav-link-button user-select-none"
+      :class="{'hud-post': postOpen, 'nav-link-button-playing': jazzPlaying}"
+      v-show="!overflowHidden"
+      @click="toggleJazz()"
+    ></span>
+    <!-- </router-link> -->
     <div class="overlay"></div>
+    <audio id="jazz" volume="0.1" loop muted>
+      <source src="/assets/sounds/jazz.mp3" type="audio/mp3" />
+    </audio>
   </div>
 </template>
 
 <script>
 import { EventBus } from "./event-bus.js";
 
+// window.onblur = function() {
+//   while (document.title.length > 0) {
+//     document.title = document.title.slice(1);
+//   }
+//   document.title = "sup";
+// };
+
 export default {
   data() {
     return {
       postTitle: "tangerine v0.1",
-      postOpen: false
+      postOpen: false,
+      jazzPlaying: false,
+      audioObj: null,
+      overflowHidden: true
     };
+  },
+  methods: {
+    toggleJazz() {
+      if (this.jazzPlaying) {
+        this.audioObj.pause();
+      } else {
+        var playPromise = this.audioObj.play();
+        if (playPromise !== undefined) {
+          playPromise.then(_ => {}).catch(error => {});
+        }
+      }
+      this.jazzPlaying = !this.jazzPlaying;
+    }
   },
   created() {
     EventBus.$on("post-opened", title => {
       this.postOpen = true;
     });
+    EventBus.$on("tangerine-done", title => {
+      this.overflowHidden = false;
+    });
+  },
+  mounted() {
+    this.audioObj = document.getElementById("jazz");
   },
   watch: {
     $route(to, from) {
@@ -95,6 +133,9 @@ body {
   word-wrap: var(--text-word-wrap);
 
   overflow-x: hidden;
+
+  // cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 49.6 49.6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='svgGroup' stroke-linecap='round' fill-rule='evenodd' font-size='9pt' stroke='%23000' stroke-width='0.25mm' fill='%23000' style='stroke:%23000;stroke-width:0.25mm;fill:%23000'%3E%3Cpath d='M 39.8 4.7 L 44.9 9.8 L 36.1 18.6 L 31.1 21.4 L 31.6 22.6 L 36.1 21.2 L 49.6 21.2 L 49.6 28.4 L 36.1 28.4 L 31.6 27 L 31.1 28.2 L 36.1 31 L 44.9 39.8 L 39.8 44.9 L 31 36.1 L 28.2 31.1 L 27 31.6 L 28.4 36.1 L 28.4 49.6 L 21.2 49.6 L 21.2 36.1 L 22.6 31.6 L 21.4 31.1 L 18.6 36.1 L 9.8 44.9 L 4.7 39.8 L 13.5 31 L 18.5 28.2 L 18 27 L 13.5 28.4 L 0 28.4 L 0 21.2 L 13.5 21.2 L 18 22.6 L 18.5 21.4 L 13.5 18.6 L 4.7 9.8 L 9.8 4.7 L 18.6 13.5 L 21.4 18.5 L 22.6 18 L 21.2 13.5 L 21.2 0 L 28.4 0 L 28.4 13.5 L 27 18 L 28.2 18.5 L 31 13.5 L 39.8 4.7 Z' vector-effect='non-scaling-stroke'/%3E%3C/g%3E%3C/svg%3E"),
+  //   auto !important;
 }
 
 * {
@@ -137,6 +178,10 @@ body,
   height: 100vh;
 }
 
+.overflow-hidden {
+  overflow-y: hidden;
+}
+
 .nav-path {
   position: fixed;
   bottom: 0;
@@ -161,6 +206,7 @@ body,
 .nav-link-button {
   width: 2rem;
   height: 2rem;
+  transform-origin: center;
 
   border-radius: 50%;
   border: 0.2rem solid #222;
@@ -180,6 +226,22 @@ body,
   }
 
   cursor: pointer;
+  // cursor: none;
+
+  animation: fade 2s ease;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.nav-link-button-playing {
+  background-color: rgb(255, 208, 0);
 }
 
 .nav-link:visited .nav-link-button {

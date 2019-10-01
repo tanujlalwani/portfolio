@@ -16,6 +16,7 @@
 
 <script>
 import TypeIt from "typeit";
+import { EventBus } from "../event-bus.js";
 
 export default {
   data() {
@@ -60,10 +61,10 @@ export default {
           <br/>and listen to some smooooooooth jazz.`
       )
       .exec(() => {
+        EventBus.$emit("tangerine-done");
         this.instructionsText = "↓ ↓ ↓";
       })
       .go();
-    // this.audioObj.play();
   }
 };
 </script>
