@@ -45,7 +45,7 @@
       </router-link>
     </div>
     <div class="posts-preload" v-for="post in posts" v-bind:key="post.id">
-      <video v-if="post.coverVideo" muted>
+      <video v-if="post.coverVideo" muted preload="auto">
         <source :src="getCoverVideo(post.path)" type="video/webm" />
       </video>
       <img v-else :src="getCoverImage(post.path)" type="image/png" />
