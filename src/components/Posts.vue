@@ -44,6 +44,12 @@
         </div>
       </router-link>
     </div>
+    <div class="posts-preload" v-for="post in posts" v-bind:key="post.id">
+      <video v-if="post.coverVideo" muted>
+        <source :src="getCoverVideo(post.path)" type="video/webm" />
+      </video>
+      <img v-else :src="getCoverImage(post.path)" type="image/png" />
+    </div>
     <div class="post-cover-background">
       <post-cover v-if="currentPost != null" v-bind:post="currentPost"></post-cover>
     </div>
@@ -109,6 +115,12 @@ export default {
     getNoiseSrc() {
       return require("../assets/noise.mp4");
     },
+    getCoverImage(path) {
+      return require("../assets/posts/" + path + "/cover.png");
+    },
+    getCoverVideo(path) {
+      return require("../assets/posts/" + path + "/cover.webm");
+    },
     visibilityChanged(isVisible, entry, post) {
       if (isVisible) {
         this.updatePostView(post);
@@ -138,6 +150,14 @@ export default {
 </script>
 
 <style lang="scss">
+.posts-preload {
+  width: 0px;
+  height: 0px;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+
 .posts {
   width: 100vw;
   height: 100vh;

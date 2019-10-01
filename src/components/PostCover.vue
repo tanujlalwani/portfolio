@@ -1,10 +1,10 @@
 <template>
   <div class="post-cover">
     <video
+      preload="auto"
       id="posts-view-video"
       v-if="post.coverVideo"
       :poster="getCoverImage"
-      preload="none"
       playsinline
       muted
       class="post-list-item-video"
@@ -13,7 +13,7 @@
       :src="getCoverVideo"
       type="video/webm"
     ></video>
-    <img v-else class="post-list-item-image" :src="getCoverImage" type="image/png" />
+    <img preload="auto" v-else class="post-list-item-image" :src="getCoverImage" type="image/png" />
   </div>
 </template>
 

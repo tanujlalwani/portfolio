@@ -39,6 +39,9 @@ export default {
       .pause(1000)
       .delete(8)
       .type(`n <i>unfinished</i> bot 🤖.`)
+      .options({
+        speed: 30
+      })
       .type(
         `
           <br/><br/>Well, this is embarassing`
@@ -52,7 +55,7 @@ export default {
       .pause(400)
       .type(
         `<br/><br/>Someday my creator will finish building me
-        <br/>(no, he's not just lazy, <i>you're</i> lazy)
+        <br/>(no, he's not lazy, <i>you're</i> lazy)
           <br/>Till then, I'm just a bunch of sarcastic code named after a fruit.
           <br/><br/>Anyway, use your free will!
           <br/>Go on and explore the wonders that lie below.

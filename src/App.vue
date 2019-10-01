@@ -1,5 +1,5 @@
 <template>
-  <div class="app size-fill-viewport" :class="{ 'overflow-hidden': overflowHidden }">
+  <div class="app size-fill-viewport">
     <router-view />
     <span class="nav-path user-select-none" :class="{'hud-post': postOpen}">{{ postTitle }}</span>
     <!-- <router-link to="/" class="nav-link"> -->
@@ -44,9 +44,9 @@ export default {
         this.audioObj.pause();
       } else {
         var playPromise = this.audioObj.play();
-        if (playPromise !== undefined) {
-          playPromise.then(_ => {}).catch(error => {});
-        }
+        // if (playPromise !== undefined) {
+        //   playPromise.then(_ => {}).catch(error => {});
+        // }
       }
       this.jazzPlaying = !this.jazzPlaying;
     }
