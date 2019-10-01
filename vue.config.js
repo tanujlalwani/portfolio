@@ -20,15 +20,51 @@ module.exports = {
 
     config.module
       .rule('image')
-      .test(/.(png | jpe?g | gif | svg)$/)
+      .test(/.(png | jpe?g | gif | svg | webm)$/)
       .use('file-loader')
       .loader('file-loader')
       .options({
-        name: '[hash].[name].[ext]'
+        name: '[path][name].[ext]'
       })
       .end();
     // .use('image-loader')
     // .loader('image-webpack-loader')
     // .end();
+
+    config.module
+      .rule('media')
+      .use('url-loader')
+      .loader('url-loader')
+      .tap(options => {
+        // modify the options...
+        options = {
+          limit: 4096,
+          fallback: {
+            loader: 'file-loader',
+            options: {
+              name: '[path]/[name].[ext]'
+            }
+          }
+        };
+        return options;
+      });
+
+    config.module
+      .rule('images')
+      .use('url-loader')
+      .loader('url-loader')
+      .tap(options => {
+        // modify the options...
+        options = {
+          limit: 4096,
+          fallback: {
+            loader: 'file-loader',
+            options: {
+              name: '[path]/[name].[ext]'
+            }
+          }
+        };
+        return options;
+      });
   }
 };
